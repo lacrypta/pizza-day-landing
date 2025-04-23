@@ -117,7 +117,7 @@ export default function BitcoinPizzaDay() {
             </motion.div> */}
 
             {/* CTV en lugar de CTA */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
@@ -131,7 +131,7 @@ export default function BitcoinPizzaDay() {
                   Asegurá tu lugar <ArrowRight className='ml-2 h-5 w-5' />
                 </Link>
               </Button>
-            </motion.div>
+            </motion.div> */}
 
             {/* Prueba social rápida */}
             <motion.div
@@ -140,7 +140,7 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <p>24 de Mayo, 2024 • 19:00 hs</p>
+              <p>23 de Mayo, 2024 • 19:00 hs</p>
               <p>La Crypta, Buenos Aires • Entradas limitadas.</p>
             </motion.div>
           </div>
