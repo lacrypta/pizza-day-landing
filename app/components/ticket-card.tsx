@@ -49,7 +49,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`overflow-hidden ${
+      className={`overflow-hidden w-full ${
         isPremium
           ? 'p-[1px] bg-gradient-to-b from-brand-green border-brand-green rounded-2xl'
           : 'border-brand-gray/50 rounded-none'
@@ -71,7 +71,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
             <div className='flex justify-between items-center'>
               <CardTitle className={`text-2xl`}>{title}</CardTitle>
             </div>
-            <CardDescription className='text-zinc-400'>{description}</CardDescription>
+            {/* <CardDescription className='text-zinc-400'>{description}</CardDescription> */}
           </CardHeader>
 
           <CardContent className='space-y-6'>

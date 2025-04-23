@@ -140,7 +140,7 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <p>22 de Mayo, 2024 • 19:00 hs</p>
+              <p>24 de Mayo, 2024 • 19:00 hs</p>
               <p>La Crypta, Buenos Aires • Entradas limitadas.</p>
             </motion.div>
           </div>
@@ -188,7 +188,7 @@ export default function BitcoinPizzaDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Mira cómo cientos de entusiastas de Bitcoin se reunieron para celebrar, aprender y conectar en un evento
+          Mirá cómo cientos de entusiastas de Bitcoin se reunieron para celebrar, aprender y conectar en un evento
           inolvidable.
         </motion.p>
 
@@ -243,20 +243,20 @@ export default function BitcoinPizzaDay() {
           <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
               title='Tarjeta LaWallet'
-              description='Acceso completo al evento con el precio más accesible'
+              description='Acceso completo al evento con el precio más accesible.'
               blocks={lawalletBlocks}
               sold={ticketSales.lawallet}
               benefits={[
                 'Tarjeta clásica.',
-                'Acceso completo a todas las charlas y actividades.',
-                'Networking con la comunidad Bitcoin.',
+                'Acceso completo a las charlas y actividades.',
+                'Networking con la comunidad.',
               ]}
               isPremium={false}
             />
 
             <TicketCard
               title='Tarjeta La Crypta'
-              description='La experiencia premium para maximizar tu participación'
+              description='La experiencia premium para maximizar tu participación.'
               blocks={cryptaBlocks}
               sold={ticketSales.crypta}
               benefits={[
