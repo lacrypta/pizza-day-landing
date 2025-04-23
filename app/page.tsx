@@ -242,7 +242,7 @@ export default function BitcoinPizzaDay() {
         ) : (
           <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
-              title='Tarjeta LaWallet'
+              title='Acceso Normie'
               description='Acceso completo al evento con el precio más accesible.'
               blocks={lawalletBlocks}
               sold={ticketSales.lawallet}
@@ -255,7 +255,7 @@ export default function BitcoinPizzaDay() {
             />
 
             <TicketCard
-              title='Tarjeta La Crypta'
+              title='Acceso Bitcoiner'
               description='La experiencia premium para maximizar tu participación.'
               blocks={cryptaBlocks}
               sold={ticketSales.crypta}
