@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { Twitter, Instagram, Hash } from 'lucide-react';
+import { NostrIcon } from '@/components/icons/nostr';
+import Link from 'next/link';
 
 interface SocialLink {
   type: 'twitter' | 'instagram' | 'nostr';
@@ -20,7 +22,7 @@ export default function PresenterAvatar({ name, image, socials }: PresenterAvata
       case 'instagram':
         return <Instagram className='h-3 w-3' />;
       case 'nostr':
-        return <Hash className='h-3 w-3' />;
+        return <NostrIcon className='h-4 w-4' />;
       default:
         return null;
     }
@@ -56,7 +58,7 @@ export default function PresenterAvatar({ name, image, socials }: PresenterAvata
         {socials && socials.length > 0 && (
           <div className='flex items-center gap-2'>
             {socials.map((social, index) => (
-              <a
+              <Link
                 key={index}
                 href={getSocialUrl(social.type, social.username)}
                 target='_blank'
@@ -64,8 +66,8 @@ export default function PresenterAvatar({ name, image, socials }: PresenterAvata
                 className='flex items-center text-xs text-brand-green hover:underline'
               >
                 {getSocialIcon(social.type)}
-                <span className='ml-1'>@{social.username.substring(0, 8)}</span>
-              </a>
+                <span className='ml-1 capitalize'>{social.type}</span>
+              </Link>
             ))}
           </div>
         )}

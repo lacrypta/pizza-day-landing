@@ -85,7 +85,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
 
             {/* Block Progress */}
             <div className='space-y-4'>
-              <p className='font-semibold text-zinc-300 font-blatant'>Progreso de bloques</p>
+              <p className='font-semibold text-zinc-300'>Progreso de bloques</p>
               <div className='flex items-center gap-2'>
                 {blocks.map((block, index) => {
                   const isCurrentBlock = index === currentBlock;
@@ -129,9 +129,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
 
             {/* Benefits */}
             <div className='space-y-3'>
-              <p className='font-semibold text-zinc-300 font-blatant'>
-                {isPremium ? '✨ Beneficios exclusivos:' : 'Incluye:'}
-              </p>
+              <p className='font-semibold text-zinc-300'>{isPremium ? '✨ Beneficios exclusivos:' : 'Incluye:'}</p>
               <ul className='space-y-2'>
                 {benefits.map((benefit, index) => (
                   <li key={index} className='flex items-start'>

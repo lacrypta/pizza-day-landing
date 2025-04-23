@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+
+import { Button } from '@/components/ui/button';
 import PresenterAvatar from './presenter-avatar';
 
 // Definimos las categorías para filtrar
@@ -191,17 +193,13 @@ export default function EventSchedule() {
       {/* Filtros de categoría */}
       <div className='flex flex-wrap gap-2 mb-8 justify-center'>
         {categories.map((category) => (
-          <button
+          <Button
             key={category.value}
             onClick={() => setSelectedCategory(category.value)}
-            className={`px-4 py-2 rounded-full text-sm transition-all ${
-              selectedCategory === category.value
-                ? 'bg-brand-green text-brand-black font-medium'
-                : 'bg-zinc-800/50 text-zinc-300 hover:bg-zinc-700/50'
-            }`}
+            variant={selectedCategory === category.value ? 'default' : 'secondary'}
           >
             {category.label}
-          </button>
+          </Button>
         ))}
       </div>
 
