@@ -1,7 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Bitcoin, Sparkles, Mail, ArrowRight } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import TicketCard from './components/ticket-card';
 import EventSchedule from './components/event-schedule';
@@ -11,8 +14,8 @@ import SocialProof from './components/social-proof';
 import PasSection from './components/pas-section';
 import BenefitsSection from './components/benefits-section';
 import CountdownTimer from './components/countdown-timer';
+
 import { getTicketSales, type TicketSalesResponse } from './services/api';
-import { motion } from 'framer-motion';
 
 export default function BitcoinPizzaDay() {
   const [ticketSales, setTicketSales] = useState<TicketSalesResponse>({
@@ -119,9 +122,12 @@ export default function BitcoinPizzaDay() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className='mb-8'
+              tabIndex={-1}
             >
-              <Button size='lg'>
-                Asegurá tu lugar <ArrowRight className='ml-2 h-5 w-5' />
+              <Button size='lg' asChild>
+                <Link href={'#tickets'}>
+                  Asegurá tu lugar <ArrowRight className='ml-2 h-5 w-5' />
+                </Link>
               </Button>
             </motion.div>
 
@@ -208,7 +214,7 @@ export default function BitcoinPizzaDay() {
       </section> */}
 
       {/* Ticket Cards - Optimizados con CTV */}
-      <section className='container mx-auto py-16 px-4'>
+      <section id='tickets' className='container mx-auto py-16 px-4'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -239,11 +245,7 @@ export default function BitcoinPizzaDay() {
               description='Acceso completo al evento con el precio más accesible'
               blocks={lawalletBlocks}
               sold={ticketSales.lawallet}
-              benefits={[
-                'Acceso completo a todas las charlas y actividades',
-                'Networking con la comunidad Bitcoin',
-                'Pizza y bebidas incluidas',
-              ]}
+              benefits={['Acceso completo a todas las charlas y actividades.', 'Networking con la comunidad Bitcoin.']}
               isPremium={false}
             />
 
@@ -256,7 +258,7 @@ export default function BitcoinPizzaDay() {
                 'Descuentos en nuestra tienda.',
                 'Descuentos en capacitaciones y mentorías.',
                 'Descuentos en entradas, comida y bebidas.',
-                'Acceso a eventos privados solo para miembros.',
+                'Acceso a eventos privados.',
               ]}
               isPremium={true}
             />
@@ -296,9 +298,9 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Organizers */}
-      <section className='py-16'>
-        <div className='container mx-auto px-4'>
-          {/* <motion.h2
+      {/* <section className='py-16'>
+        <div className='container mx-auto px-4'> */}
+      {/* <motion.h2
             className='text-3xl md:text-4xl font-bold text-center mb-12 font-blatant'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -308,7 +310,7 @@ export default function BitcoinPizzaDay() {
             Organizado por Líderes del Ecosistema
           </motion.h2> */}
 
-          {/* <div className='grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16'>
+      {/* <div className='grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16'>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -424,8 +426,8 @@ export default function BitcoinPizzaDay() {
             </motion.div>
           </div> */}
 
-          {/* Sponsors Grid */}
-          {/* <motion.div
+      {/* Sponsors Grid */}
+      {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -448,8 +450,8 @@ export default function BitcoinPizzaDay() {
               </Button>
             </div>
           </motion.div> */}
-        </div>
-      </section>
+      {/* </div>
+      </section> */}
 
       {/* Final CTA - Optimizado con CTV */}
       <section className='bg-gradient-to-b from-brand-black/20 to-brand-black py-16 relative'>
@@ -484,12 +486,12 @@ export default function BitcoinPizzaDay() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className='inline-block'
+            tabIndex={-1}
           >
-            <Button
-              size='lg'
-              className='bg-brand-green hover:bg-brand-green/90 text-brand-black px-8 py-6 text-lg rounded-xl font-blatant'
-            >
-              Reserva tu entrada al precio actual <Sparkles className='ml-2 h-5 w-5' />
+            <Button size='lg' asChild>
+              <Link href='#tickets'>
+                Reserva tu entrada <Sparkles className='ml-2 h-5 w-5' />
+              </Link>
             </Button>
           </motion.div>
         </div>
