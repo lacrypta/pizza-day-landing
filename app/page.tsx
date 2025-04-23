@@ -61,7 +61,7 @@ export default function BitcoinPizzaDay() {
     <div className='min-h-screen'>
       {/* Header - Optimizado con Who/Why/What framework */}
       <header className='relative overflow-hidden flex items-center min-h-screen pt-12 pb-20'>
-        <div className='container mx-auto px-4 relative z-10'>
+        <div className='container'>
           <div className='flex flex-col items-center justify-center text-center'>
             {/* <motion.div
               className='flex items-center gap-4 mb-6'
@@ -93,7 +93,7 @@ export default function BitcoinPizzaDay() {
               <span className='text-gradient'>Bitcoin Pizza Day</span>
               <br />
               <span className='text-zinc-100'>
-                Conecta con la <br /> Comunidad Bitcoiner
+                Conectá con la <br /> Comunidad Bitcoiner
               </span>
             </motion.h1>
 
@@ -140,8 +140,8 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <p>22 de Mayo, 2024 • 20:00 hs • La Crypta, Buenos Aires</p>
-              <p>Entradas limitadas.</p>
+              <p>22 de Mayo, 2024 • 19:00 hs</p>
+              <p>La Crypta, Buenos Aires • Entradas limitadas.</p>
             </motion.div>
           </div>
         </div>
@@ -155,24 +155,22 @@ export default function BitcoinPizzaDay() {
       </section> */}
 
       {/* Framework PAS */}
-      {/* <section className='py-16'>
-        <div className='container mx-auto px-4'>
-          <motion.h2
-            className='text-3xl md:text-4xl font-bold text-center mb-16 font-blatant'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            ¿Por qué necesitas estar en el Bitcoin Pizza Day?
-          </motion.h2>
+      <section className='container py-16'>
+        <motion.h2
+          className='text-3xl md:text-4xl font-bold text-center mb-16 font-blatant'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          ¿Por qué necesitás venir?
+        </motion.h2>
 
-          <PasSection />
-        </div>
-      </section> */}
+        <PasSection />
+      </section>
 
       {/* YouTube Video */}
-      <section className='container mx-auto py-16 px-4'>
+      <section className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -217,7 +215,7 @@ export default function BitcoinPizzaDay() {
       </section> */}
 
       {/* Ticket Cards - Optimizados con CTV */}
-      <section id='tickets' className='container mx-auto py-16 px-4'>
+      <section id='tickets' className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -280,7 +278,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Schedule */}
-      <section className='container mx-auto py-16 px-4'>
+      <section className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -464,7 +462,7 @@ export default function BitcoinPizzaDay() {
       {/* Final CTA - Optimizado con CTV */}
       <section className='bg-gradient-to-b from-brand-black/20 to-brand-black py-16 relative'>
         <div className='absolute inset-0 bg-noise opacity-10'></div>
-        <div className='container mx-auto px-4 text-center relative z-10'>
+        <div className='container text-center'>
           <motion.h2
             className='text-3xl md:text-4xl font-bold mb-8 font-blatant'
             initial={{ opacity: 0, y: 20 }}

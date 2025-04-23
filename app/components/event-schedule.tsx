@@ -33,7 +33,7 @@ export default function EventSchedule() {
   // Datos del cronograma con categorías y presentadores
   const scheduleData: ScheduleItem[] = [
     {
-      time: '20:00',
+      time: '19:00',
       title: 'Apertura de puertas y bienvenida',
       description: 'Registro de asistentes y networking inicial',
       category: 'receso',
