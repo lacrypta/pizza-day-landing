@@ -142,7 +142,7 @@ export default function EventSchedule() {
     },
     {
       time: '00:30',
-      title: 'Show de tela en vivo',
+      title: 'Show de tela',
       description: '',
       category: 'celebración',
       presenters: [
