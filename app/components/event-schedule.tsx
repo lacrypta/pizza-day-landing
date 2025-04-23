@@ -47,10 +47,7 @@ export default function EventSchedule() {
         {
           name: 'Equipo La Crypta',
           image: '/calendar/la-crypta.jpg',
-          socials: [
-            { type: 'twitter', username: 'lacrypta_' },
-            { type: 'nostr', username: 'npub1lacrypta' },
-          ],
+          socials: [{ type: 'twitter', username: 'LaCryptaOk' }],
         },
       ],
     },
@@ -69,10 +66,7 @@ export default function EventSchedule() {
         {
           name: 'Equipo La Crypta',
           image: '/calendar/la-crypta.jpg',
-          socials: [
-            { type: 'twitter', username: 'lacrypta_' },
-            { type: 'instagram', username: 'lacrypta_' },
-          ],
+          socials: [{ type: 'twitter', username: 'LaCryptaOk' }],
         },
       ],
     },
@@ -91,10 +85,7 @@ export default function EventSchedule() {
         {
           name: 'Alfre Mancera',
           image: '/calendar/alfre.jpg',
-          socials: [
-            { type: 'twitter', username: 'alfremancera' },
-            { type: 'instagram', username: 'alfremancera' },
-          ],
+          socials: [{ type: 'twitter', username: 'albibeno' }],
         },
       ],
     },
@@ -107,10 +98,7 @@ export default function EventSchedule() {
         {
           name: 'Ariel Aguilar',
           image: '/calendar/ariel.jpg',
-          socials: [
-            { type: 'twitter', username: 'arielaguilar' },
-            { type: 'nostr', username: 'npub1ariel' },
-          ],
+          socials: [{ type: 'twitter', username: 'arielaguilar' }],
         },
       ],
     },
@@ -123,11 +111,7 @@ export default function EventSchedule() {
         {
           name: 'Gabriel Kurman',
           image: '/calendar/gabriel.jpg',
-          socials: [
-            { type: 'twitter', username: 'gkurman' },
-            { type: 'instagram', username: 'gkurman' },
-            { type: 'nostr', username: 'npub1gkurman' },
-          ],
+          socials: [{ type: 'twitter', username: 'GabrielKurman' }],
         },
       ],
     },
@@ -140,10 +124,7 @@ export default function EventSchedule() {
         {
           name: 'Equipo LaWallet',
           image: '/calendar/lawallet.jpg',
-          socials: [
-            { type: 'twitter', username: 'lawallet_' },
-            { type: 'nostr', username: 'npub1lawallet' },
-          ],
+          socials: [{ type: 'twitter', username: 'LaWalletOk' }],
         },
       ],
     },
@@ -168,7 +149,7 @@ export default function EventSchedule() {
         {
           name: 'Gabi',
           image: '/placeholder.svg?height=40&width=40',
-          socials: [{ type: 'instagram', username: 'gabimusic' }],
+          socials: [{ type: 'instagram', username: '#' }],
         },
       ],
     },
