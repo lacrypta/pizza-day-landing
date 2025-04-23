@@ -148,8 +148,8 @@ export default function EventSchedule() {
       presenters: [
         {
           name: 'Gabi',
-          image: '/placeholder.svg?height=40&width=40',
-          socials: [{ type: 'instagram', username: '#' }],
+          image: '/calendar/gabi.jpg',
+          socials: [{ type: 'instagram', username: 'gabriela_battiato' }],
         },
       ],
     },
