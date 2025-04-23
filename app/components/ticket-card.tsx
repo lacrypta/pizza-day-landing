@@ -118,7 +118,8 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
               <div className='bg-brand-black/50 p-3 rounded-lg border border-zinc-800 text-sm'>
                 <div className='flex justify-between items-center'>
                   <div className='text-zinc-400'>
-                    Bloque actual: <span className='font-semibold text-zinc-200'>{currentBlock}</span>
+                    Bloque actual:{' '}
+                    <span className='font-semibold text-zinc-200'>{currentBlock === 0 ? 'Génesis' : currentBlock}</span>
                   </div>
                   <div className='text-zinc-400'>
                     <span className={`font-semibold text-foreground`}>{remainingTickets}</span> entradas restantes

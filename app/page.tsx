@@ -231,7 +231,7 @@ export default function BitcoinPizzaDay() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           Las entradas se venden en bloques de 21 unidades. Cada bloque agotado aumenta el precio del siguiente.
-          <span className='text-brand-green font-bold ml-2'>¡No esperes al próximo bloque!</span>
+          <span className='text-brand-green font-bold ml-2'>¡No esperes para ser el último!</span>
         </motion.p>
 
         {isLoading ? (
@@ -245,7 +245,11 @@ export default function BitcoinPizzaDay() {
               description='Acceso completo al evento con el precio más accesible'
               blocks={lawalletBlocks}
               sold={ticketSales.lawallet}
-              benefits={['Acceso completo a todas las charlas y actividades.', 'Networking con la comunidad Bitcoin.']}
+              benefits={[
+                'Tarjeta clásica.',
+                'Acceso completo a todas las charlas y actividades.',
+                'Networking con la comunidad Bitcoin.',
+              ]}
               isPremium={false}
             />
 
@@ -255,6 +259,7 @@ export default function BitcoinPizzaDay() {
               blocks={cryptaBlocks}
               sold={ticketSales.crypta}
               benefits={[
+                'Tarjeta especial.',
                 'Descuentos en nuestra tienda.',
                 'Descuentos en capacitaciones y mentorías.',
                 'Descuentos en entradas, comida y bebidas.',
