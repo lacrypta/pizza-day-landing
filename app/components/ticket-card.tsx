@@ -45,25 +45,31 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
   }, [sold, blocks]);
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`overflow-hidden ${
+        isPremium
+          ? 'p-[1px] bg-gradient-to-b from-brand-green border-brand-green rounded-2xl'
+          : 'border-brand-gray/50 rounded-none'
+      }`}
+    >
+      {isPremium && (
+        <div className='flex justify-center items-center gap-1 mx-auto w-full py-2 bg-brand-green text-brand-black'>
+          <Sparkles className='h-4 w-4' />
+          <span className='font-blatant font-black text-center'>Premium</span>
+        </div>
+      )}
       <Card
         className={`relative overflow-hidden transition-all duration-300 ${
-          isPremium
-            ? 'border-brand-green bg-gradient-to-b from-brand-black to-[#151515]'
-            : 'border-brand-gray/50 bg-brand-black'
+          isPremium ? 'bg-gradient-to-b from-brand-black to-[#151515]' : 'bg-brand-black'
         }`}
       >
         <div className='relative z-10'>
           <CardHeader>
             <div className='flex justify-between items-center'>
-              <CardTitle className={`text-2xl ${isPremium ? 'font-blatant' : ''}`}>
-                {title}
-                {isPremium && (
-                  <span className='ml-2 inline-flex items-center text-brand-green'>
-                    <Sparkles className='h-4 w-4 mr-1' /> Premium
-                  </span>
-                )}
-              </CardTitle>
+              <CardTitle className={`text-2xl`}>{title}</CardTitle>
             </div>
             <CardDescription className='text-zinc-400'>{description}</CardDescription>
           </CardHeader>
