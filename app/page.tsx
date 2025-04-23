@@ -177,7 +177,7 @@ export default function BitcoinPizzaDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Revive la Experiencia del Año Pasado
+          Reviví la experiencia del año pasado
         </motion.h2>
 
         <motion.p
@@ -221,7 +221,7 @@ export default function BitcoinPizzaDay() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Elige Tu Experiencia
+          Eligí tu experiencia
         </motion.h2>
 
         <motion.p
@@ -239,7 +239,7 @@ export default function BitcoinPizzaDay() {
             <div className='w-12 h-12 border-4 border-brand-green border-t-transparent rounded-full animate-spin'></div>
           </div>
         ) : (
-          <div className='grid md:grid-cols-2 gap-8 max-w-5xl mx-auto'>
+          <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
               title='Tarjeta LaWallet'
               description='Acceso completo al evento con el precio más accesible'
