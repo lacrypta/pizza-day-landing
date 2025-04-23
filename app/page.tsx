@@ -92,11 +92,13 @@ export default function BitcoinPizzaDay() {
             >
               <span className='text-gradient'>Bitcoin Pizza Day</span>
               <br />
-              <span className='text-zinc-100'>Conecta con la Comunidad Bitcoiner.</span>
+              <span className='text-zinc-100'>
+                Conecta con la <br /> Comunidad Bitcoiner
+              </span>
             </motion.h1>
 
             <motion.p
-              className='text-xl md:text-2xl text-zinc-300 max-w-3xl mb-8'
+              className='text-xl md:text-2xl text-zinc-300 mb-8'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -106,7 +108,7 @@ export default function BitcoinPizzaDay() {
 
             {/* Contador regresivo */}
             {/* <motion.div
-              className='w-full max-w-2xl mx-auto mb-10'
+              className='w-full mx-auto mb-10'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -132,14 +134,15 @@ export default function BitcoinPizzaDay() {
             </motion.div>
 
             {/* Prueba social rápida */}
-            <motion.p
-              className='text-zinc-400 text-sm'
+            <motion.div
+              className='text-zinc-400 text-sm text-center'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              Más de 500 personas han asistido a nuestros eventos • Entradas limitadas.
-            </motion.p>
+              <p>22 de Mayo, 2024 • 20:00 hs • La Crypta, Buenos Aires</p>
+              <p>Entradas limitadas.</p>
+            </motion.div>
           </div>
         </div>
       </header>
@@ -181,7 +184,7 @@ export default function BitcoinPizzaDay() {
         </motion.h2>
 
         <motion.p
-          className='text-lg text-zinc-300 max-w-3xl mx-auto text-center mb-12'
+          className='text-lg text-zinc-300 mx-auto text-center mb-12'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -191,7 +194,7 @@ export default function BitcoinPizzaDay() {
           inolvidable.
         </motion.p>
 
-        <div className='max-w-4xl mx-auto'>
+        <div className='mx-auto'>
           <YouTubeVideo videoId='dQw4w9WgXcQ' title='Bitcoin Pizza Day - La Crypta + LaWallet' />
         </div>
       </section>
@@ -225,7 +228,7 @@ export default function BitcoinPizzaDay() {
         </motion.h2>
 
         <motion.p
-          className='text-lg text-zinc-300 max-w-2xl mx-auto text-center mb-12'
+          className='text-lg text-zinc-300 mx-auto text-center mb-12'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -289,7 +292,7 @@ export default function BitcoinPizzaDay() {
         </motion.h2>
 
         <motion.p
-          className='text-lg text-zinc-300 max-w-3xl mx-auto text-center mb-12'
+          className='text-lg text-zinc-300 mx-auto text-center mb-12'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -315,7 +318,7 @@ export default function BitcoinPizzaDay() {
             Organizado por Líderes del Ecosistema
           </motion.h2> */}
 
-      {/* <div className='grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-16'>
+      {/* <div className='grid md:grid-cols-2 gap-12 mx-auto mb-16'>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -437,14 +440,14 @@ export default function BitcoinPizzaDay() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className='max-w-5xl mx-auto'
+            className='mx-auto'
           >
             <h2 className='text-2xl md:text-3xl font-bold text-center mb-12 font-blatant'>Respaldado por</h2>
 
             <SponsorGrid />
 
             <div className='mt-12 text-center'>
-              <p className='text-zinc-300 mb-6 max-w-2xl mx-auto'>
+              <p className='text-zinc-300 mb-6 mx-auto'>
                 ¿Tu empresa quiere conectar con la comunidad Bitcoin más activa de Latinoamérica? Conviértete en sponsor
                 y potencia tu marca.
               </p>
@@ -473,7 +476,7 @@ export default function BitcoinPizzaDay() {
           </motion.h2>
 
           <motion.p
-            className='text-xl text-zinc-300 max-w-2xl mx-auto mb-8'
+            className='text-xl text-zinc-300 mx-auto mb-8'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
