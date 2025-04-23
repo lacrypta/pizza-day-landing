@@ -46,7 +46,7 @@ export default function EventSchedule() {
       presenters: [
         {
           name: 'Equipo La Crypta',
-          image: '/placeholder.svg?height=40&width=40',
+          image: '/calendar/la-crypta.jpg',
           socials: [
             { type: 'twitter', username: 'lacrypta_' },
             { type: 'nostr', username: 'npub1lacrypta' },
@@ -68,7 +68,7 @@ export default function EventSchedule() {
       presenters: [
         {
           name: 'Equipo La Crypta',
-          image: '/placeholder.svg?height=40&width=40',
+          image: '/calendar/la-crypta.jpg',
           socials: [
             { type: 'twitter', username: 'lacrypta_' },
             { type: 'instagram', username: 'lacrypta_' },
@@ -90,7 +90,7 @@ export default function EventSchedule() {
       presenters: [
         {
           name: 'Alfre Mancera',
-          image: '/placeholder.svg?height=40&width=40',
+          image: '/calendar/alfre.jpg',
           socials: [
             { type: 'twitter', username: 'alfremancera' },
             { type: 'instagram', username: 'alfremancera' },
@@ -106,7 +106,7 @@ export default function EventSchedule() {
       presenters: [
         {
           name: 'Ariel Aguilar',
-          image: '/placeholder.svg?height=40&width=40',
+          image: '/calendar/ariel.jpg',
           socials: [
             { type: 'twitter', username: 'arielaguilar' },
             { type: 'nostr', username: 'npub1ariel' },
@@ -122,7 +122,7 @@ export default function EventSchedule() {
       presenters: [
         {
           name: 'Gabriel Kurman',
-          image: '/placeholder.svg?height=40&width=40',
+          image: '/calendar/gabriel.jpg',
           socials: [
             { type: 'twitter', username: 'gkurman' },
             { type: 'instagram', username: 'gkurman' },
@@ -139,7 +139,7 @@ export default function EventSchedule() {
       presenters: [
         {
           name: 'Equipo LaWallet',
-          image: '/placeholder.svg?height=40&width=40',
+          image: '/calendar/lawallet.jpg',
           socials: [
             { type: 'twitter', username: 'lawallet_' },
             { type: 'nostr', username: 'npub1lawallet' },
