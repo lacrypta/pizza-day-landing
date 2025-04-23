@@ -49,7 +49,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`overflow-hidden w-full ${
+      className={`overflow-hidden ${
         isPremium
           ? 'p-[1px] bg-gradient-to-b from-brand-green border-brand-green rounded-2xl'
           : 'border-brand-gray/50 rounded-none'
@@ -84,8 +84,17 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
             </div>
 
             {/* Block Progress */}
-            <div className='space-y-4'>
-              <p className='font-semibold text-zinc-300'>Progreso de bloques</p>
+            <div className='flex flex-col gap-2'>
+              <div className='flex justify-between'>
+                <div className='flex gap-1 text-sm'>
+                  <p className='text-zinc-400'>Progreso</p>
+                </div>
+
+                <div className='flex gap-1 text-sm justify-end'>
+                  <p className='text-zinc-400'>Bloque: </p>
+                  <p className='text-zinc-200 font-semibold'>{currentBlock === 0 ? 'Génesis' : currentBlock}</p>
+                </div>
+              </div>
               <div className='flex items-center gap-2'>
                 {blocks.map((block, index) => {
                   const isCurrentBlock = index === currentBlock;
@@ -115,7 +124,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
                 })}
               </div>
 
-              <div className='bg-brand-black/50 p-3 rounded-lg border border-zinc-800 text-sm'>
+              {/* <div className='bg-brand-black/50 p-3 rounded-lg border border-zinc-800 text-sm'>
                 <div className='flex justify-between items-center'>
                   <div className='text-zinc-400'>
                     Bloque actual:{' '}
@@ -125,12 +134,12 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
                     <span className={`font-semibold text-foreground`}>{remainingTickets}</span> entradas restantes
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Benefits */}
             <div className='space-y-3'>
-              <p className='font-semibold text-zinc-300'>{isPremium ? '✨ Beneficios exclusivos:' : 'Incluye:'}</p>
+              <p className='font-semibold text-zinc-300'>{isPremium ? '✨ Beneficios:' : 'Incluye:'}</p>
               <ul className='space-y-2'>
                 {benefits.map((benefit, index) => (
                   <li key={index} className='flex items-start'>

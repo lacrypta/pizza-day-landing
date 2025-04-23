@@ -54,7 +54,7 @@ export default function EventSchedule() {
     {
       time: '21:35',
       title: 'Entrega de animales',
-      description: 'Distribución de tokens conmemorativos del evento',
+      description: 'Presentación de los nuevos animales.',
       category: 'presentation',
     },
     {
@@ -79,7 +79,7 @@ export default function EventSchedule() {
     {
       time: '22:10',
       title: 'Libro Criptoria',
-      description: 'Presentación del libro sobre la historia de las criptomonedas',
+      description: '',
       category: 'libro',
       presenters: [
         {
@@ -92,7 +92,7 @@ export default function EventSchedule() {
     {
       time: '22:25',
       title: 'Libro Profecía Bitcoin',
-      description: 'Análisis del impacto futuro de Bitcoin en la economía global',
+      description: '',
       category: 'libro',
       presenters: [
         {
@@ -105,7 +105,7 @@ export default function EventSchedule() {
     {
       time: '22:40',
       title: 'Libro Economías Circulares',
-      description: 'Nuevos modelos económicos basados en blockchain',
+      description: '',
       category: 'libro',
       presenters: [
         {
@@ -118,7 +118,7 @@ export default function EventSchedule() {
     {
       time: '23:05',
       title: 'LaWallet Nodes',
-      description: 'Presentación de la nueva infraestructura de nodos de LaWallet',
+      description: 'Presentación de la nueva propuesta de LaWallet.',
       category: 'presentation',
       presenters: [
         {
@@ -137,13 +137,13 @@ export default function EventSchedule() {
     {
       time: '00:10',
       title: 'Bitcoin Pizza Day',
-      description: 'Celebración del hito histórico con pizza para todos los asistentes',
+      description: 'Celebración del hito histórico con pizza para todos los asistentes.',
       category: 'celebración',
     },
     {
       time: '00:30',
-      title: 'Actuación especial',
-      description: 'Performance musical en vivo',
+      title: 'Show de tela en vivo',
+      description: '',
       category: 'celebración',
       presenters: [
         {
@@ -207,7 +207,7 @@ export default function EventSchedule() {
 
             {/* Tarjeta del evento - Todas transparentes */}
             <div
-              className={`ml-6 p-4 rounded-xl backdrop-blur-sm bg-zinc-900/30 
+              className={`flex flex-col gap-1 ml-6 p-4 rounded-xl backdrop-blur-sm bg-zinc-900/30 
                 border ${
                   shouldHighlight(event.category) ? 'border-brand-green/50' : 'border-zinc-800/50'
                 } transition-all duration-300 hover:border-zinc-700/70 group`}
