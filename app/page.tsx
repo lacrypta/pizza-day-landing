@@ -181,7 +181,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* YouTube Video */}
-      <section className='container py-16'>
+      {/* <section className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ export default function BitcoinPizzaDay() {
         <div className='mx-auto'>
           <YouTubeVideo videoId='dQw4w9WgXcQ' title='Bitcoin Pizza Day - La Crypta + LaWallet' />
         </div>
-      </section>
+      </section> */}
 
       {/* Beneficios en lugar de características */}
       <section className='py-16 bg-zinc-950'>
@@ -226,7 +226,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Ticket Cards - Optimizados con CTV */}
-      <section id='tickets' className='container py-16'>
+      {/* <section id='tickets' className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -282,11 +282,10 @@ export default function BitcoinPizzaDay() {
           </div>
         )}
 
-        {/* Urgencia y escasez */}
         <div className='text-center mt-8 text-zinc-400'>
           <p>Las entradas son limitadas y no se venderán en la puerta.</p>
         </div>
-      </section>
+      </section> */}
 
       {/* Schedule */}
       <section className='container py-16'>
@@ -462,7 +461,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Final CTA - Optimizado con CTV */}
-      <section className='bg-gradient-to-b from-brand-black/20 to-brand-black py-16 relative'>
+      {/* <section className='bg-gradient-to-b from-brand-black/20 to-brand-black py-16 relative'>
         <div className='absolute inset-0 bg-noise opacity-10'></div>
         <div className='container text-center'>
           <motion.h2
@@ -503,7 +502,7 @@ export default function BitcoinPizzaDay() {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className='bg-brand-black py-8 border-t border-zinc-800'>
