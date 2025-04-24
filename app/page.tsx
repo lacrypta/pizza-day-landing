@@ -314,9 +314,9 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Organizers */}
-      <section className='py-16'>
+      {/* <section className='py-16'>
         <div className='container mx-auto px-4'>
-          {/* <motion.h2
+          <motion.h2
             className='text-3xl md:text-4xl font-bold text-center mb-12 font-blatant'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -324,9 +324,9 @@ export default function BitcoinPizzaDay() {
             transition={{ duration: 0.5 }}
           >
             Organizado por...
-          </motion.h2> */}
+          </motion.h2>
 
-          {/* <div className='grid md:grid-cols-2 gap-8 mx-auto mb-8'>
+          <div className='grid md:grid-cols-2 gap-8 mx-auto mb-8'>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -440,9 +440,8 @@ export default function BitcoinPizzaDay() {
                 </a>
               </div>
             </motion.div>
-          </div> */}
+          </div>
 
-          {/* Sección para Sponsors */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -458,7 +457,7 @@ export default function BitcoinPizzaDay() {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA - Optimizado con CTV */}
       {/* <section className='bg-gradient-to-b from-brand-black/20 to-brand-black py-16 relative'>
