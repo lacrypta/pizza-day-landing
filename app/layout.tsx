@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://bitcoinpizzaday.lacrypta.com.ar'),
+  metadataBase: new URL('https://bitcoin-pizza-day.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Bitcoin Pizza Day 2025 - Conectá con la Comunidad Bitcoiner',
     description: 'Una noche de networking, conocimiento y celebración de la primera transacción comercial con Bitcoin.',
-    url: 'https://bitcoinpizzaday.lacrypta.com.ar',
+    url: 'https://bitcoin-pizza-day.vercel.app',
     siteName: 'Bitcoin Pizza Day 2025',
     images: [
       {
