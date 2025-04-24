@@ -16,6 +16,7 @@ import BenefitsSection from './components/benefits-section';
 import CountdownTimer from './components/countdown-timer';
 
 import { getTicketSales, type TicketSalesResponse } from './services/api';
+import { Logo } from '@/components/logo';
 
 export default function BitcoinPizzaDay() {
   const [ticketSales, setTicketSales] = useState<TicketSalesResponse>({
@@ -73,6 +74,16 @@ export default function BitcoinPizzaDay() {
               <span className='text-brand-green'>+</span>
               <div className='text-2xl font-bold font-blatant'>LaWallet</div>
             </motion.div> */}
+            <motion.div
+              className='mb-6'
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Link href='https://lacrypta.ar/' target='_blank'>
+                <Logo />
+              </Link>
+            </motion.div>
 
             {/* Titular impactante usando Who/Why/What */}
             <motion.div
@@ -140,8 +151,8 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <p>23 de Mayo, 2025 • 19:00 hs</p>
-              <p>La Crypta, Buenos Aires • Entradas limitadas.</p>
+              <p>23 de Mayo • 19:00 hs • La Crypta, Buenos Aires</p>
+              <p>Entradas limitadas.</p>
             </motion.div>
           </div>
         </div>
@@ -304,19 +315,19 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Organizers */}
-      {/* <section className='py-16'>
-        <div className='container mx-auto px-4'> */}
-      {/* <motion.h2
+      <section className='py-16'>
+        <div className='container mx-auto px-4'>
+          <motion.h2
             className='text-3xl md:text-4xl font-bold text-center mb-12 font-blatant'
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Organizado por Líderes del Ecosistema
-          </motion.h2> */}
+            Organizado por...
+          </motion.h2>
 
-      {/* <div className='grid md:grid-cols-2 gap-12 mx-auto mb-16'>
+          <div className='grid md:grid-cols-2 gap-8 mx-auto mb-8'>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -430,34 +441,25 @@ export default function BitcoinPizzaDay() {
                 </a>
               </div>
             </motion.div>
-          </div> */}
+          </div>
 
-      {/* Sponsors Grid */}
-      {/* <motion.div
+          {/* Sección para Sponsors */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className='mx-auto'
+            className='bg-zinc-900/50 p-8 rounded-xl border border-zinc-800 text-center'
           >
-            <h2 className='text-2xl md:text-3xl font-bold text-center mb-12 font-blatant'>Respaldado por</h2>
-
-            <SponsorGrid />
-
-            <div className='mt-12 text-center'>
-              <p className='text-zinc-300 mb-6 mx-auto'>
-                ¿Tu empresa quiere conectar con la comunidad Bitcoin más activa de Latinoamérica? Conviértete en sponsor
-                y potencia tu marca.
-              </p>
-
-              <Button className='bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700'>
-                <Mail className='mr-2 h-4 w-4' />
-                Potencia tu marca como sponsor
-              </Button>
-            </div>
-          </motion.div> */}
-      {/* </div>
-      </section> */}
+            <h2 className='text-2xl md:text-3xl font-bold mb-4 font-blatant'>¿Te gustaría colaborar con tu marca?</h2>
+            <p className='text-zinc-300 mb-4 mx-auto'>Convertite en sponsor y posicionate donde importa.</p>
+            <Button className='bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700'>
+              <Mail className='mr-2 h-4 w-4' />
+              Potencia tu marca
+            </Button>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Final CTA - Optimizado con CTV */}
       <section className='bg-gradient-to-b from-brand-black/20 to-brand-black py-16 relative'>

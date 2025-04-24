@@ -200,8 +200,8 @@ export default function EventSchedule() {
           >
             {/* Dot en la línea de tiempo */}
             <div
-              className={`absolute left-2 w-3 h-3 rounded-full transform mt-6 ${
-                shouldHighlight(event.category) ? 'bg-brand-green ring-2 ring-brand-green/30' : 'bg-zinc-600'
+              className={`absolute left-2 w-3 h-3 ring-4 ring-black rounded-full transform mt-6 ${
+                shouldHighlight(event.category) ? 'bg-brand-green' : 'bg-zinc-600'
               }`}
             ></div>
 

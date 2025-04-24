@@ -92,7 +92,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
 
                 <div className='flex gap-1 text-sm justify-end'>
                   <p className='text-zinc-400'>Bloque: </p>
-                  <p className='text-zinc-200 font-semibold'>{currentBlock === 0 ? 'Génesis' : currentBlock}</p>
+                  <p className='text-zinc-200 font-semibold'>{currentBlock === 0 ? 'Génesis' : '#' + currentBlock}</p>
                 </div>
               </div>
               <div className='flex items-center gap-2'>
