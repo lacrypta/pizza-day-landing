@@ -81,7 +81,7 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className='text-sm font-bold'>Edición 2024</span>
+              <span className='text-sm font-bold'>Edición 2025</span>
             </motion.div>
 
             <motion.h1
@@ -198,7 +198,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Beneficios en lugar de características */}
-      {/* <section className='py-16 bg-zinc-950'>
+      <section className='py-16 bg-zinc-950'>
         <div className='container mx-auto px-4'>
           <motion.h2
             className='text-3xl md:text-4xl font-bold text-center mb-16 font-blatant'
@@ -212,7 +212,7 @@ export default function BitcoinPizzaDay() {
 
           <BenefitsSection />
         </div>
-      </section> */}
+      </section>
 
       {/* Ticket Cards - Optimizados con CTV */}
       <section id='tickets' className='container py-16'>
