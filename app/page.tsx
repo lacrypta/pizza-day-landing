@@ -452,7 +452,7 @@ export default function BitcoinPizzaDay() {
           >
             <h2 className='text-2xl md:text-3xl font-bold mb-4 font-blatant'>¿Te gustaría colaborar con tu marca?</h2>
             <p className='text-zinc-300 mb-4 mx-auto'>Convertite en sponsor y posicionate donde importa.</p>
-            <Button className='bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700'>
+            <Button variant='secondary'>
               <Mail className='mr-2 h-4 w-4' />
               Potencia tu marca
             </Button>
