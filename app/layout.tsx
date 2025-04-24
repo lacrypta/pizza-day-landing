@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'Bitcoin Pizza Day 2025',
     images: [
       {
-        url: '/opengraph-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Bitcoin Pizza Day 2025 - La Crypta',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Bitcoin Pizza Day 2025 - Conectá con la Comunidad Bitcoiner',
     description: 'Una noche de networking, conocimiento y celebración de la primera transacción comercial con Bitcoin.',
     creator: '@lacryptaok',
-    images: ['/twitter-image.png'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
