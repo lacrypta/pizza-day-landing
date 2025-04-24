@@ -140,7 +140,7 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <p>23 de Mayo, 2024 • 19:00 hs</p>
+              <p>23 de Mayo, 2025 • 19:00 hs</p>
               <p>La Crypta, Buenos Aires • Entradas limitadas.</p>
             </motion.div>
           </div>
