@@ -181,7 +181,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* YouTube Video */}
-      {/* <section className='container py-16'>
+      <section className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -204,9 +204,9 @@ export default function BitcoinPizzaDay() {
         </motion.p>
 
         <div className='mx-auto'>
-          <YouTubeVideo videoId='dQw4w9WgXcQ' title='Bitcoin Pizza Day - La Crypta + LaWallet' />
+          <YouTubeVideo videoId='iCtn5T_jH48' title='Bitcoin Pizza Day - La Crypta + LaWallet' />
         </div>
-      </section> */}
+      </section>
 
       {/* Beneficios en lugar de características */}
       <section className='py-16 bg-zinc-950'>
