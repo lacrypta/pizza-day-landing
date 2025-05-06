@@ -21,9 +21,7 @@ const PRICE_TICKET_GENERAL = 15;
 const PRICE_TICKET_PREMIUM = 40;
 
 export default function BitcoinPizzaDay() {
-  // TO-DO
-  // Change "classic" for "premium" on the URL
-  const { data, isLoading } = useSWR('https://classic.pizza.lacrypta.ar/api/ticket/count', fetcher);
+  const { data, isLoading } = useSWR('https://premium.pizza.lacrypta.ar/api/ticket/count', fetcher);
 
   const ticketPremiumPrice = useMemo(() => {
     const block = Math.floor(data?.data?.totalTickets / 21);
