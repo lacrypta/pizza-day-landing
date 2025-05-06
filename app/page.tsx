@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Bitcoin, Sparkles, Mail, ArrowRight } from 'lucide-react';
+import useSWR from 'swr';
 
 import { Button } from '@/components/ui/button';
 import TicketCard from './components/ticket-card';
@@ -13,50 +13,20 @@ import SponsorGrid from './components/sponsor-grid';
 import SocialProof from './components/social-proof';
 import PasSection from './components/pas-section';
 import BenefitsSection from './components/benefits-section';
-import CountdownTimer from './components/countdown-timer';
-
-import { getTicketSales, type TicketSalesResponse } from './services/api';
 import { Logo } from '@/components/logo';
 
+import fetcher from '@/config/fetcher';
+
+const PRICE_TICKET_GENERAL = 15;
+const PRICE_TICKET_PREMIUM = 40;
+
 export default function BitcoinPizzaDay() {
-  const [ticketSales, setTicketSales] = useState<TicketSalesResponse>({
-    lawallet: 0,
-    crypta: 0,
-  });
-  const [isLoading, setIsLoading] = useState(true);
+  const { data, isLoading } = useSWR('https://classic.pizza.lacrypta.ar/api/ticket/count', fetcher);
 
-  // Fetch ticket sales data
-  useEffect(() => {
-    const fetchSales = async () => {
-      try {
-        const data = await getTicketSales();
-        setTicketSales(data);
-      } catch (error) {
-        console.error('Error fetching ticket sales:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchSales();
-  }, []);
-
-  // Definición de bloques para ambos tipos de tickets
-  const lawalletBlocks = [
-    { number: 0, price: 15, total: 21 },
-    { number: 1, price: 19.99, total: 21 },
-    { number: 2, price: 24.99, total: 21 },
-    { number: 3, price: 27.99, total: 21 },
-    { number: 4, price: 29.99, total: 21 },
-  ];
-
-  const cryptaBlocks = [
-    { number: 0, price: 40, total: 21 },
-    { number: 1, price: 59, total: 21 },
-    { number: 2, price: 79, total: 21 },
-    { number: 3, price: 89, total: 21 },
-    { number: 4, price: 99, total: 21 },
-  ];
+  const ticketPremiumPrice = useMemo(() => {
+    const block = Math.floor(data?.data?.totalTickets / 21);
+    return PRICE_TICKET_PREMIUM + Number(block * 10);
+  }, [data]);
 
   return (
     <div className='min-h-screen'>
@@ -64,16 +34,6 @@ export default function BitcoinPizzaDay() {
       <header className='relative overflow-hidden flex items-center min-h-screen pt-12 pb-20'>
         <div className='container'>
           <div className='flex flex-col items-center justify-center text-center'>
-            {/* <motion.div
-              className='flex items-center gap-4 mb-6'
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className='text-2xl font-bold font-blatant'>La Crypta</div>
-              <span className='text-brand-green'>+</span>
-              <div className='text-2xl font-bold font-blatant'>LaWallet</div>
-            </motion.div> */}
             <motion.div
               className='mb-6'
               initial={{ opacity: 0, y: -20 }}
@@ -226,7 +186,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Ticket Cards - Optimizados con CTV */}
-      {/* <section id='tickets' className='container py-16'>
+      <section id='tickets' className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -253,10 +213,10 @@ export default function BitcoinPizzaDay() {
         ) : (
           <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
-              title='Acceso Normie'
+              price={PRICE_TICKET_GENERAL}
+              url='https://classic.pizza.lacrypta.ar/'
+              title='Entrada General'
               description='Acceso completo al evento con el precio más accesible.'
-              blocks={lawalletBlocks}
-              sold={ticketSales.lawallet}
               benefits={[
                 'Tarjeta clásica.',
                 'Acceso completo a las charlas y actividades.',
@@ -266,10 +226,10 @@ export default function BitcoinPizzaDay() {
             />
 
             <TicketCard
-              title='Acceso Bitcoiner'
+              price={ticketPremiumPrice}
+              url='https://premium.pizza.lacrypta.ar/'
+              title='Entrada Premium'
               description='La experiencia premium para maximizar tu participación.'
-              blocks={cryptaBlocks}
-              sold={ticketSales.crypta}
               benefits={[
                 'Tarjeta especial.',
                 'Descuentos en nuestra tienda.',
@@ -277,6 +237,7 @@ export default function BitcoinPizzaDay() {
                 'Descuentos en entradas, comida y bebidas.',
                 'Acceso a eventos privados.',
               ]}
+              filled={Math.floor(data?.data?.totalTickets / 21)}
               isPremium={true}
             />
           </div>
@@ -285,7 +246,7 @@ export default function BitcoinPizzaDay() {
         <div className='text-center mt-8 text-zinc-400'>
           <p>Las entradas son limitadas y no se venderán en la puerta.</p>
         </div>
-      </section> */}
+      </section>
 
       {/* Schedule */}
       <section className='container py-16'>
