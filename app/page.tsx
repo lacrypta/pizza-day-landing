@@ -17,15 +17,15 @@ import { Logo } from '@/components/logo';
 
 import fetcher from '@/config/fetcher';
 
-const PRICE_TICKET_GENERAL = 15;
-const PRICE_TICKET_PREMIUM = 40;
+const TICKET_GENERAL_PRICE = 15;
+const TICKET_PREMIUM_PRICE = 40;
 
 export default function BitcoinPizzaDay() {
   const { data, isLoading } = useSWR('https://premium.pizza.lacrypta.ar/api/ticket/count', fetcher);
 
   const ticketPremiumPrice = useMemo(() => {
     const block = Math.floor(data?.data?.totalTickets / 21);
-    return PRICE_TICKET_PREMIUM + Number(block * 10);
+    return TICKET_PREMIUM_PRICE + Number(block * 10);
   }, [data]);
 
   return (
@@ -213,10 +213,9 @@ export default function BitcoinPizzaDay() {
         ) : (
           <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
-              price={PRICE_TICKET_GENERAL}
+              price={TICKET_GENERAL_PRICE}
               url='https://classic.pizza.lacrypta.ar/'
               title='Entrada General'
-              description='Acceso completo al evento con el precio más accesible.'
               benefits={[
                 'Tarjeta clásica.',
                 'Acceso completo a las charlas y actividades.',
@@ -229,7 +228,6 @@ export default function BitcoinPizzaDay() {
               price={ticketPremiumPrice}
               url='https://premium.pizza.lacrypta.ar/'
               title='Entrada Premium'
-              description='La experiencia premium para maximizar tu participación.'
               benefits={[
                 'Tarjeta especial.',
                 'Descuentos en nuestra tienda.',

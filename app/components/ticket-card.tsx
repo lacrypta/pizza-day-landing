@@ -11,7 +11,6 @@ interface TicketCardProps {
   url: string;
   title: string;
   price: number;
-  description: string;
   filled?: number;
   benefits: string[];
   isPremium?: boolean;
