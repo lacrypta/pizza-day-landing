@@ -1,49 +1,23 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
 import { Check, ChevronRight, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-interface Block {
-  number: number;
-  price: number;
-  total: number;
-}
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface TicketCardProps {
+  url: string;
   title: string;
+  price: number;
   description: string;
-  blocks: Block[];
-  sold: number;
+  filled?: number;
   benefits: string[];
   isPremium?: boolean;
 }
 
-export default function TicketCard({ title, description, blocks, sold, benefits, isPremium = false }: TicketCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [hoveredBlock, setHoveredBlock] = useState<number | null>(null);
-  const [currentBlock, setCurrentBlock] = useState(0);
-  const [remainingTickets, setRemainingTickets] = useState(0);
-  const [currentPrice, setCurrentPrice] = useState(0);
-
-  // Calculate current block based on total sold
-  useEffect(() => {
-    // Each block has 21 tickets
-    const blockSize = 21;
-    // Calculate current block (0-indexed)
-    const calculatedBlock = Math.min(Math.floor(sold / blockSize), blocks.length - 1);
-    setCurrentBlock(calculatedBlock);
-
-    // Calculate remaining tickets for the current block
-    const remainingInBlock = blockSize - (sold % blockSize);
-    setRemainingTickets(remainingInBlock === 0 && calculatedBlock < blocks.length - 1 ? blockSize : remainingInBlock);
-
-    // Set current price
-    setCurrentPrice(blocks[calculatedBlock].price);
-  }, [sold, blocks]);
-
+export default function TicketCard({ url, title, price, filled, benefits, isPremium = false }: TicketCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -58,7 +32,7 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
       {isPremium && (
         <div className='flex justify-center items-center gap-1 mx-auto w-full py-2 bg-brand-green text-brand-black'>
           <Sparkles className='h-4 w-4' />
-          <span className='font-blatant font-black text-center'>Premium</span>
+          <span className='font-blatant font-black text-center'>VIP Access</span>
         </div>
       )}
       <Card
@@ -71,7 +45,6 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
             <div className='flex justify-between items-center'>
               <CardTitle className={`text-2xl`}>{title}</CardTitle>
             </div>
-            {/* <CardDescription className='text-zinc-400'>{description}</CardDescription> */}
           </CardHeader>
 
           <CardContent className='space-y-6'>
@@ -79,63 +52,40 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
             <div>
               <p className='text-sm text-zinc-400'>Precio actual</p>
               <p className={`text-4xl font-bold ${isPremium ? 'text-brand-green' : 'text-foreground'}`}>
-                ${currentPrice} <span className='text-sm text-zinc-400'>USD</span>
+                ${price} <span className='text-sm text-zinc-400'>USD</span>
               </p>
             </div>
 
             {/* Block Progress */}
-            <div className='flex flex-col gap-2'>
-              <div className='flex justify-between'>
-                <div className='flex gap-1 text-sm'>
-                  <p className='text-zinc-400'>Progreso</p>
-                </div>
+            {(filled || filled === 0) && (
+              <div className='flex flex-col gap-2'>
+                <div className='flex justify-between'>
+                  <div className='flex gap-1 text-sm'>
+                    <p className='text-zinc-400'>Progreso</p>
+                  </div>
 
-                <div className='flex gap-1 text-sm justify-end'>
-                  <p className='text-zinc-400'>Bloque: </p>
-                  <p className='text-zinc-200 font-semibold'>{currentBlock === 0 ? 'Génesis' : '#' + currentBlock}</p>
+                  <div className='flex gap-1 text-sm justify-end'>
+                    <p className='text-zinc-400'>Bloque: </p>
+                    <p className='text-zinc-200 font-semibold'>{filled === 0 ? 'Génesis' : '#' + filled}</p>
+                  </div>
                 </div>
-              </div>
-              <div className='flex items-center gap-2'>
-                {blocks.map((block, index) => {
-                  const isCurrentBlock = index === currentBlock;
-                  const isPastBlock = index < currentBlock;
-                  const percentageSold = isCurrentBlock ? ((sold % 21) / 21) * 100 : isPastBlock ? 100 : 0;
-
-                  return (
-                    <div
-                      key={index}
-                      className={`relative w-full ${
-                        isCurrentBlock ? 'opacity-100' : isPastBlock ? 'opacity-80' : 'opacity-50'
-                      }`}
-                    >
-                      <div className={`h-2 w-full bg-zinc-800 rounded-full overflow-hidden relative`}>
-                        <motion.div
-                          className={`h-full ${
-                            isPremium ? 'bg-gradient-to-r from-brand-green to-brand-green/80' : 'bg-white'
-                          }`}
-                          style={{ width: `${percentageSold}%` }}
-                          initial={{ width: 0 }}
-                          animate={{ width: `${percentageSold}%` }}
-                          transition={{ duration: 1, ease: 'easeOut' }}
-                        ></motion.div>
+                <div className='flex items-center gap-2'>
+                  {[0, 1, 2, 3, 4]?.map((value: any) => {
+                    return (
+                      <div key={value} className={`relative w-full ${value < filled ? 'opacity-80' : 'opacity-50'}`}>
+                        <div className={`h-2 w-full bg-zinc-800 rounded-full overflow-hidden relative`}>
+                          <motion.div
+                            className={`h-full ${
+                              isPremium ? (value < filled ? 'bg-brand-green' : 'bg-transparent') : 'bg-white'
+                            }`}
+                          ></motion.div>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* <div className='bg-brand-black/50 p-3 rounded-lg border border-zinc-800 text-sm'>
-                <div className='flex justify-between items-center'>
-                  <div className='text-zinc-400'>
-                    Bloque actual:{' '}
-                    <span className='font-semibold text-zinc-200'>{currentBlock === 0 ? 'Génesis' : currentBlock}</span>
-                  </div>
-                  <div className='text-zinc-400'>
-                    <span className={`font-semibold text-foreground`}>{remainingTickets}</span> entradas restantes
-                  </div>
+                    );
+                  })}
                 </div>
-              </div> */}
-            </div>
+              </div>
+            )}
 
             {/* Benefits */}
             <div className='space-y-3'>
@@ -158,9 +108,11 @@ export default function TicketCard({ title, description, blocks, sold, benefits,
           </CardContent>
 
           <CardFooter>
-            <Button className='w-full' size='lg' variant={isPremium ? 'default' : 'secondary'}>
-              Comprar entrada
-              <ChevronRight className='ml-2 h-4 w-4' />
+            <Button className='w-full' size='lg' variant={isPremium ? 'default' : 'secondary'} asChild>
+              <Link href={url}>
+                Comprar entrada
+                <ChevronRight className='ml-2 h-4 w-4' />
+              </Link>
             </Button>
           </CardFooter>
         </div>
