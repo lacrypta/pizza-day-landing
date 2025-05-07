@@ -186,7 +186,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Ticket Cards - Optimizados con CTV */}
-      <section id='tickets' className='container py-16'>
+      {/* <section id='tickets' className='container py-16'>
         <motion.h2
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
@@ -244,7 +244,7 @@ export default function BitcoinPizzaDay() {
         <div className='text-center mt-8 text-zinc-400'>
           <p>Las entradas son limitadas y no se venderán en la puerta.</p>
         </div>
-      </section>
+      </section> */}
 
       {/* Schedule */}
       <section className='container py-16'>
