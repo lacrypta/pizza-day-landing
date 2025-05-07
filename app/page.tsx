@@ -17,6 +17,7 @@ import { Logo } from '@/components/logo';
 
 import fetcher from '@/config/fetcher';
 
+const ENABLE_TICKETS = process.env.NEXT_PUBLIC_ENABLE_TICKETS === 'true';
 const TICKET_GENERAL_PRICE = 15;
 const TICKET_PREMIUM_PRICE = 40;
 
@@ -186,31 +187,27 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Ticket Cards - Optimizados con CTV */}
-      {/* <section id='tickets' className='container py-16'>
-        <motion.h2
-          className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Eligí tu experiencia
-        </motion.h2>
+      {ENABLE_TICKETS && (
+        <section id='tickets' className='container py-16'>
+          <motion.h2
+            className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Eligí tu experiencia
+          </motion.h2>
 
-        <motion.p
-          className='text-lg text-zinc-300 mx-auto text-center mb-12'
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Las entradas se venden en bloques de 21 unidades. Cada bloque agotado aumenta el precio del siguiente.
-          <span className='text-brand-green font-bold ml-2'>¡No esperes para ser el último!</span>
-        </motion.p>
+          <motion.p
+            className='text-lg text-zinc-300 mx-auto text-center mb-12'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Las entradas se venden en bloques de 21 unidades. Cada bloque agotado aumenta el precio del siguiente.
+            <span className='text-brand-green font-bold ml-2'>¡No esperes para ser el último!</span>
+          </motion.p>
 
-        {isLoading ? (
-          <div className='flex justify-center py-12'>
-            <div className='w-12 h-12 border-4 border-brand-green border-t-transparent rounded-full animate-spin'></div>
-          </div>
-        ) : (
           <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
               price={TICKET_GENERAL_PRICE}
@@ -223,7 +220,6 @@ export default function BitcoinPizzaDay() {
               ]}
               isPremium={false}
             />
-
             <TicketCard
               price={ticketPremiumPrice}
               url='https://premium.pizza.lacrypta.ar/'
@@ -239,12 +235,12 @@ export default function BitcoinPizzaDay() {
               isPremium={true}
             />
           </div>
-        )}
 
-        <div className='text-center mt-8 text-zinc-400'>
-          <p>Las entradas son limitadas y no se venderán en la puerta.</p>
-        </div>
-      </section> */}
+          <div className='text-center mt-8 text-zinc-400'>
+            <p>Las entradas son limitadas y no se venderán en la puerta.</p>
+          </div>
+        </section>
+      )}
 
       {/* Schedule */}
       <section className='container py-16'>
