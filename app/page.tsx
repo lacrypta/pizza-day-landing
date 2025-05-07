@@ -231,7 +231,7 @@ export default function BitcoinPizzaDay() {
                 'Descuentos en entradas, comida y bebidas.',
                 'Acceso a eventos privados.',
               ]}
-              filled={Math.floor(data?.data?.totalTickets / 21)}
+              totalTickets={data?.data?.totalTickets}
               isPremium={true}
             />
           </div>
