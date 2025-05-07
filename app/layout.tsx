@@ -87,7 +87,7 @@ export default function RootLayout({
       `}
         </Script>
       </head>
-      <body className={inter.className}>
+      <body className={`bg-black ${inter.className}}`}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
