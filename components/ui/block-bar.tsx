@@ -36,7 +36,7 @@ export function BlockBar({ totalTickets = 0 }: BlockBarProps) {
           <span>{currentBlock === 0 ? 'Génesis' : '#' + currentBlock}</span>
         </div>
         <div className='flex gap-1 justify-end text-xs'>
-          <span>Próximo: #{totalTickets}</span>
+          <span>Próximo: #{totalTickets + 1}</span>
         </div>
       </div>
     </div>
