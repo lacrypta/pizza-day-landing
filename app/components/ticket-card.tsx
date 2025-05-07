@@ -51,7 +51,7 @@ export default function TicketCard({ url, title, price, filled, benefits, isPrem
             <div>
               <p className='text-sm text-zinc-400'>Precio actual</p>
               <p className={`text-4xl font-bold ${isPremium ? 'text-brand-green' : 'text-foreground'}`}>
-                ${price} <span className='text-sm text-zinc-400'>USD</span>
+                ${price ? price : '-'} <span className='text-sm text-zinc-400'>USD</span>
               </p>
             </div>
 
@@ -69,7 +69,7 @@ export default function TicketCard({ url, title, price, filled, benefits, isPrem
                   </div>
                 </div>
                 <div className='flex items-center gap-2'>
-                  {[0, 1, 2, 3, 4]?.map((value: any) => {
+                  {[0, 1, 2]?.map((value: any) => {
                     return (
                       <div key={value} className={`relative w-full ${value < filled ? 'opacity-80' : 'opacity-50'}`}>
                         <div className={`h-2 w-full bg-zinc-800 rounded-full overflow-hidden relative`}>
