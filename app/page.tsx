@@ -26,8 +26,10 @@ export default function BitcoinPizzaDay() {
     refreshInterval: 2000,
   });
 
+  const totalTickets = data?.data?.totalTickets || 0;
+
   const ticketPremiumPrice = useMemo(() => {
-    const block = Math.floor(data?.data?.totalTickets / 21);
+    const block = Math.floor(totalTickets / 21);
     return TICKET_PREMIUM_PRICE + Number(block * 10);
   }, [data]);
 
@@ -233,7 +235,7 @@ export default function BitcoinPizzaDay() {
                 'Descuentos en entradas, comida y bebidas.',
                 'Acceso a eventos privados.',
               ]}
-              totalTickets={data?.data?.totalTickets || 0}
+              totalTickets={totalTickets || 0}
               isPremium={true}
             />
           </div>
