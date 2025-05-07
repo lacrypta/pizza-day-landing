@@ -34,50 +34,56 @@ export default function EventSchedule() {
   const scheduleData: ScheduleItem[] = [
     {
       time: '19:00',
-      title: 'Apertura de puertas y bienvenida',
-      description: 'Registro de asistentes y networking inicial',
+      title: 'Apertura de puertas',
       category: 'receso',
+      description: 'Onboarding de tarjetas Premium.',
     },
     {
-      time: '21:30',
+      time: '21:15',
       title: 'Bienvenidos',
       description: 'Apertura oficial del evento Bitcoin Pizza Day',
       category: 'presentation',
       presenters: [
         {
-          name: 'Equipo La Crypta',
-          image: '/calendar/la-crypta.jpg',
-          socials: [{ type: 'twitter', username: 'LaCryptaOk' }],
+          name: 'Agustin Kassis',
+          image: '/calendar/agustin.jpg',
+          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
+        },
+      ],
+    },
+    {
+      time: '21:20',
+      title: 'Entrega de animales',
+      description: 'Presentación de los nuevos animales.',
+      category: 'presentation',
+      presenters: [
+        {
+          name: 'Agustin Kassis',
+          image: '/calendar/agustin.jpg',
+          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
         },
       ],
     },
     {
       time: '21:35',
-      title: 'Entrega de animales',
-      description: 'Presentación de los nuevos animales.',
-      category: 'presentation',
-    },
-    {
-      time: '21:50',
       title: 'Tarjeta La Crypta',
       description: 'Presentación de la nueva tarjeta y sus beneficios',
       category: 'presentation',
       presenters: [
         {
-          name: 'Equipo La Crypta',
-          image: '/calendar/la-crypta.jpg',
-          socials: [{ type: 'twitter', username: 'LaCryptaOk' }],
+          name: 'Agustin Kassis',
+          image: '/calendar/agustin.jpg',
+          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
         },
       ],
     },
     {
-      time: '22:00',
+      time: '21:50',
       title: 'Receso',
-      description: 'Pausa para networking y refrigerios',
       category: 'receso',
     },
     {
-      time: '22:10',
+      time: '22:00',
       title: 'Libro Criptoria',
       description: '',
       category: 'libro',
@@ -90,7 +96,7 @@ export default function EventSchedule() {
       ],
     },
     {
-      time: '22:25',
+      time: '22:15',
       title: 'Libro Profecía Bitcoin',
       description: '',
       category: 'libro',
@@ -103,7 +109,7 @@ export default function EventSchedule() {
       ],
     },
     {
-      time: '22:40',
+      time: '22:30',
       title: 'Libro Economías Circulares',
       description: '',
       category: 'libro',
@@ -116,32 +122,30 @@ export default function EventSchedule() {
       ],
     },
     {
-      time: '23:05',
+      time: '22:45',
+      title: 'Receso',
+      category: 'receso',
+    },
+    {
+      time: '22:55',
       title: 'LaWallet Nodes',
       description: 'Presentación de la nueva propuesta de LaWallet.',
       category: 'presentation',
       presenters: [
         {
-          name: 'Equipo LaWallet',
-          image: '/calendar/lawallet.jpg',
-          socials: [{ type: 'twitter', username: 'LaWalletOk' }],
+          name: 'Agustin Kassis',
+          image: '/calendar/agustin.jpg',
+          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
+        },
+        {
+          name: 'Marce Cons',
+          image: '/calendar/marce.jpg',
+          socials: [{ type: 'twitter', username: 'marcela_cons' }],
         },
       ],
     },
     {
-      time: '00:00',
-      title: 'Receso',
-      description: 'Breve pausa antes de la celebración principal',
-      category: 'receso',
-    },
-    {
-      time: '00:10',
-      title: 'Bitcoin Pizza Day',
-      description: 'Celebración del hito histórico con pizza para todos los asistentes.',
-      category: 'celebración',
-    },
-    {
-      time: '00:30',
+      time: '23:30',
       title: 'Show de tela',
       description: '',
       category: 'celebración',
@@ -207,12 +211,12 @@ export default function EventSchedule() {
 
             {/* Tarjeta del evento - Todas transparentes */}
             <div
-              className={`flex flex-col gap-1 ml-6 p-4 rounded-xl backdrop-blur-sm bg-zinc-900/30 
+              className={`flex flex-col gap-2 ml-6 p-4 rounded-xl backdrop-blur-sm bg-zinc-900/30 
                 border ${
                   shouldHighlight(event.category) ? 'border-brand-green/50' : 'border-zinc-800/50'
                 } transition-all duration-300 hover:border-zinc-700/70 group`}
             >
-              <div className='flex justify-between items-start mb-2'>
+              <div className='flex justify-between items-start'>
                 <h3
                   className={`text-xl font-bold ${
                     shouldHighlight(event.category) ? 'text-brand-green' : 'text-zinc-100'
