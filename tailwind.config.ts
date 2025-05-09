@@ -19,6 +19,16 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        pixel: ['"Press Start 2P"', "cursive"],
+        segment: ['"DSEG7 Classic"', "monospace"],
+      },
+      boxShadow: {
+        inner: "inset 0 2px 4px rgba(0, 0, 0, 0.5)", // Sombra interna para el display
+      },
+      textShadow: {
+        glow: "0 0 8px rgba(255, 0, 0, 0.8)", // Brillo para números digitales
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -100,7 +110,9 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate')
+  ]
 } satisfies Config;
 
 export default config;
