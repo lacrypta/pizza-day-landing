@@ -70,6 +70,7 @@ const config = {
           black: '#101010',
           gray: '#A0A0A0',
           white: '#FFFFFF',
+          red: '#FF5238',
         },
       },
       borderRadius: {

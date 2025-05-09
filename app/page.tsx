@@ -20,9 +20,10 @@ import fetcher from '@/config/fetcher';
 import CountdownTimer from './components/countdown-timer';
 
 const ENABLE_TICKETS = process.env.NEXT_PUBLIC_ENABLE_TICKETS === 'true';
+console.log('Enable tickets?:', ENABLE_TICKETS)
 const TICKET_GENERAL_PRICE = 15;
 const TICKET_PREMIUM_PRICE = 40;
-const EVENT_DATE = new Date('2025-05-23T20:00:00')
+const EVENT_DATE = new Date('2025-05-13T20:00:00')
 
 export default function BitcoinPizzaDay() {
   const { data, isLoading } = useSWR('https://premium.pizza.lacrypta.ar/api/ticket/count', fetcher, {
@@ -120,7 +121,7 @@ export default function BitcoinPizzaDay() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <p>23 de Mayo • 19:00 hs • La Crypta, Belgrano, Buenos Aires</p>
-              <p className='text-[#FF5238]'>Entradas limitadas.</p>
+              <p className='text-brand-red'>Entradas limitadas.</p>
             </motion.div>
           </div>
         </div>

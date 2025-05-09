@@ -36,7 +36,7 @@ const formatTimeUnit = (value: number): string => String(value).padStart(2, "0")
 
 const TimeUnit = ({ value, label }: TimeUnitProps) => (
     <div className="flex flex-col text-center">
-      <span className="text-[#B3F950] text-2xl sm:text-4xl font-segment bg-black px-4 py-2 rounded w-fit border border-[#B3F950] shadow-inner glow">
+      <span className="text-brand-green text-2xl sm:text-4xl font-segment bg-black px-4 py-2 rounded w-fit border border-brand-green shadow-inner glow">
         {formatTimeUnit(value)}
       </span>
       <span className="text-gray-300 text-sm font-blatant mt-2">{label}</span>
@@ -52,11 +52,11 @@ const CountdownTimer = ({ eventDate, countdownTitle = "Event" }: CountdownTimerP
     return () => clearInterval(interval);
   }, [eventDate]);
 
-  if (!timeLeft) return <div className="text-[#FF5238] text-center text-lg font-blatant">¡{countdownTitle} ha terminado!</div>;
+  if (!timeLeft) return <div className="text-brand-red text-center text-lg font-blatant">¡{countdownTitle} ha terminado!</div>;
 
   return (
-    <div className="flex flex-col text-center items-center bg-black p-4 border-2 border-[#B3F950] rounded-lg m-4 w-full max-w-xs sm:max-w-md md:max-w-lg px-4 mx-auto my-4 sm:my-6">
-      <h2 className="text-[#B3F950] text-2xl font-blatant">{countdownTitle}</h2>
+    <div className="flex flex-col text-center items-center bg-black p-4 rounded-lg m-4 w-full max-w-xs sm:max-w-md md:max-w-lg px-4 mx-auto my-4 sm:my-6">
+      <h2 className="text-brand-green text-2xl font-blatant">{countdownTitle}</h2>
       <div className="flex gap-2 text-sm text-center sm:text-md items-center bg-black p-4 rounded font-blatant">
         <TimeUnit value={timeLeft.days} label="DIAS" />
         <TimeUnit value={timeLeft.hours} label="HORAS" />
