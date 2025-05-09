@@ -68,8 +68,8 @@ export default function BitcoinPizzaDay() {
             >
               <span className='text-gradient'>Bitcoin Pizza Day</span>
               <br />
-              <span className='text-zinc-100'>
-                Conectá con la <br /> Comunidad Bitcoiner
+              <span className='text-3xl md:text-5xl text-zinc-100'>
+                Conectá con la comunidad Bitcoiner mas picante
               </span>
             </motion.h1>
 
@@ -79,7 +79,7 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Una noche de networking, conocimiento y celebración de la primera transacción comercial con Bitcoin.
+              Vení a celebrar este hito de Bitcoin en la comunidad mas bitcoiner del mundo.
             </motion.p>
 
             {/* Contador regresivo */}
@@ -111,13 +111,13 @@ export default function BitcoinPizzaDay() {
 
             {/* Prueba social rápida */}
             <motion.div
-              className='text-zinc-400 text-sm text-center'
+              className='text-zinc-400 text-lg text-center'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <p>23 de Mayo • 19:00 hs • La Crypta, Buenos Aires</p>
-              <p>Entradas limitadas.</p>
+              <p>23 de Mayo • 19:00 hs • La Crypta, Belgrano, Buenos Aires</p>
+              <p className='text-[#FF5238]'>Entradas limitadas.</p>
             </motion.div>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function BitcoinPizzaDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Mirá cómo cientos de entusiastas de Bitcoin se reunieron para celebrar, aprender y conectar en un evento
+          Mirá cómo cientos de guerreros bitcoiners se reunieron para celebrar, aprender y conectar en un evento
           inolvidable.
         </motion.p>
 
