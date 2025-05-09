@@ -1,24 +1,24 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { AlertTriangle, TrendingUp, Zap } from 'lucide-react';
+import { AlertTriangle, TrendingUp, Trophy, Turtle, Zap } from 'lucide-react';
 
 export default function PasSection() {
   const items = [
     {
       type: 'problem',
-      icon: <AlertTriangle className='h-8 w-8 text-brand-green' />,
-      description: 'La comunidad Bitcoin está dispersa y desconectada.',
+      icon: <Trophy className='h-8 w-8 text-brand-green' />,
+      description: 'Somos la mejor comunidad de Bitcoin de este lado de la galaxia.',
     },
     {
       type: 'agitation',
       icon: <TrendingUp className='h-8 w-8 text-brand-green' />,
-      description: 'Sin conexiones reales, perdés oportunidades valiosas de crecer.',
+      description: 'Los bitcoiners tenemos que reunirnos para reforzar la capa 0. La capa ideológica.',
     },
     {
       type: 'solution',
       icon: <Zap className='h-8 w-8 text-brand-green' />,
-      description: 'Somos el punto de encuentro para reconectar, aprender e inspirarte.',
+      description: 'Vas a poder darte el gusto de gastar tus satoshis como en ningún otro lado.',
     },
   ];
 
