@@ -52,7 +52,7 @@ const CountdownTimer = ({ eventDate, countdownTitle = "Event" }: CountdownTimerP
     return () => clearInterval(interval);
   }, [eventDate]);
 
-  if (!timeLeft) return <div className="text-brand-red text-center text-lg font-blatant">¡{countdownTitle} ha terminado!</div>;
+  if (!timeLeft) return <div className="text-brand-red text-center text-lg font-blatant">¡Tiempo de espera terminado!</div>;
 
   return (
     <div className="flex flex-col text-center items-center bg-black p-4 rounded-lg m-4 w-full max-w-xs sm:max-w-md md:max-w-lg px-4 mx-auto my-4 sm:my-6">
