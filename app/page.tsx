@@ -203,10 +203,10 @@ export default function BitcoinPizzaDay() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Eligí tu experiencia
+            Una experiencia única
           </motion.h2>
 
-          <motion.p
+          {/* <motion.p
             className='text-lg text-zinc-300 mx-auto text-center mb-12'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -214,7 +214,7 @@ export default function BitcoinPizzaDay() {
           >
             Las entradas se venden en bloques de 21 unidades. Cada bloque agotado aumenta el precio del siguiente.
             <span className='text-brand-green font-bold ml-2'>¡No esperes para ser el último!</span>
-          </motion.p>
+          </motion.p> */}
 
           <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
@@ -227,20 +227,6 @@ export default function BitcoinPizzaDay() {
                 'Networking con la comunidad.',
               ]}
               isPremium={false}
-            />
-            <TicketCard
-              price={ticketPremiumPrice}
-              url='https://premium.pizza.lacrypta.ar/'
-              title='Entrada Premium'
-              benefits={[
-                'Tarjeta especial.',
-                'Descuentos en nuestra tienda.',
-                'Descuentos en capacitaciones y mentorías.',
-                'Descuentos en entradas, comida y bebidas.',
-                'Acceso a eventos privados.',
-              ]}
-              totalTickets={totalTickets || 0}
-              isPremium={true}
             />
           </div>
 
