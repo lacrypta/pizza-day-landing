@@ -1,7 +1,10 @@
-'use client';
+// CountdownTimer.tsx
+import { useEffect, useState } from "react";
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+interface CountdownTimerProps {
+  eventDate: Date;
+  countdownTitle?: string;
+}
 
 interface TimeLeft {
   days: number;
@@ -10,70 +13,58 @@ interface TimeLeft {
   seconds: number;
 }
 
-export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+interface TimeUnitProps {
+    value: number;
+    label: string;
+  }
+  
+
+const calculateTimeLeft = (targetDate: Date): TimeLeft | null => {
+  const now = new Date();
+  const difference = targetDate.getTime() - now.getTime();
+  if (difference <= 0) return null;
+
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / (1000 * 60)) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
+  };
+};
+
+const formatTimeUnit = (value: number): string => String(value).padStart(2, "0");
+
+const TimeUnit = ({ value, label }: TimeUnitProps) => (
+    <div className="flex flex-col text-center">
+      <span className="text-brand-green text-2xl sm:text-4xl font-segment bg-black px-4 py-2 rounded w-fit border border-brand-green shadow-inner glow">
+        {formatTimeUnit(value)}
+      </span>
+      <span className="text-gray-300 text-sm font-blatant mt-2">{label}</span>
+    </div>
+  );
+
+const CountdownTimer = ({ eventDate, countdownTitle = "Event" }: CountdownTimerProps) => {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(calculateTimeLeft(eventDate));
 
   useEffect(() => {
-    // Fecha del evento (22 de mayo de 2024)
-    const eventDate = new Date('2024-05-22T20:00:00').getTime();
+    const updateTimer = () => setTimeLeft(calculateTimeLeft(eventDate));
+    const interval = setInterval(updateTimer, 1000);
+    return () => clearInterval(interval);
+  }, [eventDate]);
 
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        setTimeLeft({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-        });
-        return;
-      }
-
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const timeUnits = [
-    { label: 'Días', value: timeLeft.days },
-    { label: 'Horas', value: timeLeft.hours },
-    { label: 'Minutos', value: timeLeft.minutes },
-    { label: 'Segundos', value: timeLeft.seconds },
-  ];
+  if (!timeLeft) return <div className="text-brand-red text-center text-lg font-blatant">¡Tiempo de espera terminado!</div>;
 
   return (
-    <div className='w-full'>
-      <h3 className='text-center text-xl mb-6 text-zinc-300'>El evento comienza en:</h3>
-      <div className='flex justify-center gap-4'>
-        {timeUnits.map((unit, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className='flex flex-col items-center'
-          >
-            <div className='bg-brand-green/10 border border-brand-green/30 rounded-lg p-4 w-20 h-20 flex items-center justify-center mb-2'>
-              <span className='text-3xl font-bold text-brand-green'>{unit.value.toString().padStart(2, '0')}</span>
-            </div>
-            <span className='text-sm text-zinc-400'>{unit.label}</span>
-          </motion.div>
-        ))}
+    <div className="flex flex-col text-center items-center bg-black p-4 rounded-lg m-4 w-full max-w-xs sm:max-w-md md:max-w-lg px-4 mx-auto my-4 sm:my-6">
+      <h2 className="text-brand-green text-2xl font-blatant">{countdownTitle}</h2>
+      <div className="flex gap-2 text-sm text-center sm:text-md items-center bg-black p-4 rounded font-blatant">
+        <TimeUnit value={timeLeft.days} label="DIAS" />
+        <TimeUnit value={timeLeft.hours} label="HORAS" />
+        <TimeUnit value={timeLeft.minutes} label="MIN." />
+        <TimeUnit value={timeLeft.seconds} label="SEG." />
       </div>
     </div>
   );
-}
+};
+
+export default CountdownTimer;
