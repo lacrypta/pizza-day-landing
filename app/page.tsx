@@ -224,20 +224,6 @@ export default function BitcoinPizzaDay() {
               ]}
               isPremium={false}
             />
-            <TicketCard
-              price={ticketPremiumPrice}
-              url='https://premium.pizza.lacrypta.ar/'
-              title='Entrada Premium'
-              benefits={[
-                'Tarjeta especial.',
-                'Descuentos en nuestra tienda.',
-                'Descuentos en capacitaciones y mentorías.',
-                'Descuentos en entradas, comida y bebidas.',
-                'Acceso a eventos privados.',
-              ]}
-              totalTickets={totalTickets || 0}
-              isPremium={true}
-            />
           </div>
 
           <div className='text-center mt-8 text-zinc-400'>
