@@ -199,10 +199,10 @@ export default function BitcoinPizzaDay() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Eligí tu experiencia
+            Una experiencia única
           </motion.h2>
 
-          <motion.p
+          {/* <motion.p
             className='text-lg text-zinc-300 mx-auto text-center mb-12'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export default function BitcoinPizzaDay() {
           >
             Las entradas se venden en bloques de 21 unidades. Cada bloque agotado aumenta el precio del siguiente.
             <span className='text-brand-green font-bold ml-2'>¡No esperes para ser el último!</span>
-          </motion.p>
+          </motion.p> */}
 
           <div className='flex flex-col md:flex-row justify-center gap-8 mx-auto'>
             <TicketCard
