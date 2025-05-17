@@ -1,30 +1,34 @@
-'use client';
+"use client";
 
-import { useMemo } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import useSWR from 'swr';
+import { useMemo } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import useSWR from "swr";
 
-import { Button } from '@/components/ui/button';
-import TicketCard from './components/ticket-card';
-import EventSchedule from './components/event-schedule';
-import YouTubeVideo from './components/youtube-video';
-import SponsorGrid from './components/sponsor-grid';
-import SocialProof from './components/social-proof';
-import PasSection from './components/pas-section';
-import BenefitsSection from './components/benefits-section';
-import { Logo } from '@/components/logo';
+import { Button } from "@/components/ui/button";
+import TicketCard from "./components/ticket-card";
+import EventSchedule from "./components/event-schedule";
+import YouTubeVideo from "./components/youtube-video";
+import SponsorGrid from "./components/sponsor-grid";
+import SocialProof from "./components/social-proof";
+import PasSection from "./components/pas-section";
+import BenefitsSection from "./components/benefits-section";
+import { Logo } from "@/components/logo";
 
-import fetcher from '@/config/fetcher';
+import fetcher from "@/config/fetcher";
 
-const ENABLE_TICKETS = process.env.NEXT_PUBLIC_ENABLE_TICKETS === 'true';
+const ENABLE_TICKETS = process.env.NEXT_PUBLIC_ENABLE_TICKETS === "true";
 const TICKET_GENERAL_PRICE = 15;
 const TICKET_PREMIUM_PRICE = 40;
 
 export default function BitcoinPizzaDay() {
-  const { data, isLoading } = useSWR('https://premium.pizza.lacrypta.ar/api/ticket/count', fetcher, {
-    refreshInterval: 2000,
-  });
+  const { data, isLoading } = useSWR(
+    "https://premium.pizza.lacrypta.ar/api/ticket/count",
+    fetcher,
+    {
+      refreshInterval: 2000,
+    }
+  );
 
   const totalTickets = data?.data?.totalTickets || 0;
 
@@ -79,7 +83,8 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Una noche de networking, conocimiento y celebración de la primera transacción comercial con Bitcoin.
+              Una noche de networking, conocimiento y celebración de la primera
+              transacción comercial con Bitcoin.
             </motion.p>
 
             {/* Contador regresivo */}
@@ -164,12 +169,15 @@ export default function BitcoinPizzaDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Mirá cómo cientos de entusiastas de Bitcoin se reunieron para celebrar, aprender y conectar en un evento
-          inolvidable.
+          Mirá cómo cientos de entusiastas de Bitcoin se reunieron para
+          celebrar, aprender y conectar en un evento inolvidable.
         </motion.p>
 
         <div className='mx-auto'>
-          <YouTubeVideo videoId='iCtn5T_jH48' title='Bitcoin Pizza Day - La Crypta + LaWallet' />
+          <YouTubeVideo
+            videoId='iCtn5T_jH48'
+            title='Bitcoin Pizza Day - La Crypta + LaWallet'
+          />
         </div>
       </section>
 
@@ -218,9 +226,9 @@ export default function BitcoinPizzaDay() {
               url='https://classic.pizza.lacrypta.ar/'
               title='Entrada General'
               benefits={[
-                'Tarjeta clásica.',
-                'Acceso completo a las charlas y actividades.',
-                'Networking con la comunidad.',
+                "Tarjeta clásica.",
+                "Acceso completo a las charlas y actividades.",
+                "Networking con la comunidad.",
               ]}
               isPremium={false}
             />
@@ -235,13 +243,14 @@ export default function BitcoinPizzaDay() {
       {/* Schedule */}
       <section className='container py-16'>
         <motion.h2
+          id='schedule'
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Una noche para celebrar, aprender y conectar
+          Cronograma del evento
         </motion.h2>
 
         <motion.p
@@ -251,8 +260,7 @@ export default function BitcoinPizzaDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Hemos preparado un cronograma que combina aprendizaje, networking y celebración para que aproveches cada
-          minuto.
+          Primeros las charlas.
         </motion.p>
 
         <EventSchedule />
@@ -451,7 +459,9 @@ export default function BitcoinPizzaDay() {
       {/* Footer */}
       <footer className='bg-brand-black py-8 border-t border-zinc-800'>
         <div className='container mx-auto px-4 text-center'>
-          <p className='text-zinc-500'>© 2025 La Crypta. Todos los derechos reservados.</p>
+          <p className='text-zinc-500'>
+            © 2025 La Crypta. Todos los derechos reservados.
+          </p>
         </div>
       </footer>
     </div>
