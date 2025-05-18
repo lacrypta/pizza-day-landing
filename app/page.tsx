@@ -18,7 +18,7 @@ import { Logo } from '@/components/logo';
 import fetcher from '@/config/fetcher';
 
 const ENABLE_TICKETS = process.env.NEXT_PUBLIC_ENABLE_TICKETS === 'true';
-const TICKET_GENERAL_PRICE = 21;
+const TICKET_GENERAL_PRICE = Number(process.env.NEXT_PUBLIC_GENERAL_PRICE || 0);
 const TICKET_PREMIUM_PRICE = 40;
 
 export default function BitcoinPizzaDay() {
