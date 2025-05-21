@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import useSWR from 'swr';
+import "./globals.css"
 
 import { Button } from '@/components/ui/button';
 import TicketCard from './components/ticket-card';
@@ -16,10 +17,12 @@ import BenefitsSection from './components/benefits-section';
 import { Logo } from '@/components/logo';
 
 import fetcher from '@/config/fetcher';
+import CountdownTimer from './components/countdown-timer';
 
 const ENABLE_TICKETS = process.env.NEXT_PUBLIC_ENABLE_TICKETS === 'true';
 const TICKET_GENERAL_PRICE = Number(process.env.NEXT_PUBLIC_GENERAL_PRICE || 0);
 const TICKET_PREMIUM_PRICE = 40;
+const EVENT_DATE = new Date('2025-05-13T20:00:00')
 
 export default function BitcoinPizzaDay() {
   const { data, isLoading } = useSWR('https://premium.pizza.lacrypta.ar/api/ticket/count', fetcher, {
@@ -68,8 +71,8 @@ export default function BitcoinPizzaDay() {
             >
               <span className='text-gradient'>Bitcoin Pizza Day</span>
               <br />
-              <span className='text-zinc-100'>
-                Conectá con la <br /> Comunidad Bitcoiner
+              <span className='text-3xl md:text-5xl text-zinc-100'>
+                Conectá con la comunidad Bitcoiner mas picante
               </span>
             </motion.h1>
 
@@ -79,7 +82,7 @@ export default function BitcoinPizzaDay() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Una noche de networking, conocimiento y celebración de la primera transacción comercial con Bitcoin.
+              Vení a celebrar este hito de Bitcoin en la comunidad mas bitcoiner del mundo.
             </motion.p>
 
             {/* Contador regresivo */}
@@ -111,13 +114,13 @@ export default function BitcoinPizzaDay() {
 
             {/* Prueba social rápida */}
             <motion.div
-              className='text-zinc-400 text-sm text-center'
+              className='text-zinc-400 text-lg text-center'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <p>23 de Mayo • 19:00 hs • La Crypta, Buenos Aires</p>
-              <p>Entradas limitadas.</p>
+              <p>23 de Mayo • 19:00 hs • La Crypta, Belgrano, Buenos Aires</p>
+              <p className='text-brand-red'>Entradas limitadas.</p>
             </motion.div>
           </div>
         </div>
@@ -164,7 +167,7 @@ export default function BitcoinPizzaDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Mirá cómo cientos de entusiastas de Bitcoin se reunieron para celebrar, aprender y conectar en un evento
+          Mirá cómo cientos de guerreros bitcoiners se reunieron para celebrar, aprender y conectar en un evento
           inolvidable.
         </motion.p>
 
@@ -191,7 +194,7 @@ export default function BitcoinPizzaDay() {
       </section>
 
       {/* Ticket Cards - Optimizados con CTV */}
-      {ENABLE_TICKETS && (
+      {ENABLE_TICKETS ? (
         <section id='tickets' className='container py-16'>
           <motion.h2
             className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
@@ -230,6 +233,13 @@ export default function BitcoinPizzaDay() {
             <p>Las entradas son limitadas y no se venderán en la puerta.</p>
           </div>
         </section>
+      ) : (
+        <div className='items-center text-center'>
+          <CountdownTimer
+            eventDate={EVENT_DATE}
+            countdownTitle='Las entradas estarán disponibles en:'
+          />
+        </div>
       )}
 
       {/* Schedule */}
