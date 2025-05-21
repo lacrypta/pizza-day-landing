@@ -20,8 +20,7 @@ import fetcher from '@/config/fetcher';
 import CountdownTimer from './components/countdown-timer';
 
 const ENABLE_TICKETS = process.env.NEXT_PUBLIC_ENABLE_TICKETS === 'true';
-console.log('Enable tickets?:', ENABLE_TICKETS)
-const TICKET_GENERAL_PRICE = 15;
+const TICKET_GENERAL_PRICE = Number(process.env.NEXT_PUBLIC_GENERAL_PRICE || 0);
 const TICKET_PREMIUM_PRICE = 40;
 const EVENT_DATE = new Date('2025-05-13T20:00:00')
 
@@ -246,13 +245,14 @@ export default function BitcoinPizzaDay() {
       {/* Schedule */}
       <section className='container py-16'>
         <motion.h2
+          id='schedule'
           className='text-3xl md:text-4xl font-bold text-center mb-4 font-blatant'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Una noche para celebrar, aprender y conectar
+          Cronograma del evento
         </motion.h2>
 
         <motion.p
@@ -262,8 +262,7 @@ export default function BitcoinPizzaDay() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Hemos preparado un cronograma que combina aprendizaje, networking y celebración para que aproveches cada
-          minuto.
+          Primeros las charlas.
         </motion.p>
 
         <EventSchedule />

@@ -110,24 +110,11 @@ export default function EventSchedule() {
     },
     {
       time: '22:30',
-      title: 'Libro Economías Circulares',
-      description: '',
-      category: 'libro',
-      presenters: [
-        {
-          name: 'Gabriel Kurman',
-          image: '/calendar/gabriel.jpg',
-          socials: [{ type: 'twitter', username: 'GabrielKurman' }],
-        },
-      ],
-    },
-    {
-      time: '22:45',
       title: 'Receso',
       category: 'receso',
     },
     {
-      time: '22:55',
+      time: '22:40',
       title: 'LaWallet Nodes',
       description: 'Presentación de la nueva propuesta de LaWallet.',
       category: 'presentation',
@@ -145,7 +132,7 @@ export default function EventSchedule() {
       ],
     },
     {
-      time: '23:30',
+      time: '23:10',
       title: 'Show de tela',
       description: '',
       category: 'celebración',
