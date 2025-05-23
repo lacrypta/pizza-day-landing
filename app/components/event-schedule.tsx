@@ -65,6 +65,19 @@ export default function EventSchedule() {
       ],
     },
     {
+      time: '21:35',
+      title: 'Tarjeta La Crypta',
+      description: 'Presentación de la nueva tarjeta y sus beneficios',
+      category: 'presentation',
+      presenters: [
+        {
+          name: 'Agustin Kassis',
+          image: '/calendar/agustin.jpg',
+          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
+        },
+      ],
+    },
+    {
       time: '21:50',
       title: 'Receso',
       category: 'receso',
