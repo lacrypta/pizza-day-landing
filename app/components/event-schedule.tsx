@@ -1,15 +1,20 @@
-'use client';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-import { Button } from '@/components/ui/button';
-import PresenterAvatar from './presenter-avatar';
+import { Button } from "@/components/ui/button";
+import PresenterAvatar from "./presenter-avatar";
 
 // Definimos las categorías para filtrar
-type EventCategory = 'all' | 'presentation' | 'libro' | 'receso' | 'celebración';
+type EventCategory =
+  | "all"
+  | "presentation"
+  | "libro"
+  | "receso"
+  | "celebración";
 
 interface SocialLink {
-  type: 'twitter' | 'instagram' | 'nostr';
+  type: "twitter" | "instagram" | "nostr";
   username: string;
 }
 
@@ -28,119 +33,107 @@ interface ScheduleItem {
 }
 
 export default function EventSchedule() {
-  const [selectedCategory, setSelectedCategory] = useState<EventCategory>('all');
+  const [selectedCategory, setSelectedCategory] =
+    useState<EventCategory>("all");
 
   // Datos del cronograma con categorías y presentadores
   const scheduleData: ScheduleItem[] = [
     {
-      time: '19:00',
-      title: 'Apertura de puertas',
-      category: 'receso',
-      description: 'Onboarding de tarjetas Premium.',
+      time: "19:00",
+      title: "Apertura de puertas",
+      category: "receso",
+      description: "Onboarding de tarjetas Premium.",
     },
     {
-      time: '21:15',
-      title: 'Bienvenidos',
-      description: 'Apertura oficial del evento Bitcoin Pizza Day',
-      category: 'presentation',
+      time: "21:00",
+      title: "Bienvenidos",
+      description: "Apertura oficial del evento Bitcoin Pizza Day",
+      category: "presentation",
       presenters: [
         {
-          name: 'Agustin Kassis',
-          image: '/calendar/agustin.jpg',
-          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
+          name: "Agustin Kassis",
+          image: "/calendar/agustin.jpg",
+          socials: [{ type: "twitter", username: "agustin_kassis" }],
         },
       ],
     },
     {
-      time: '21:20',
-      title: 'Entrega de animales',
-      description: 'Presentación de los nuevos animales.',
-      category: 'presentation',
+      time: "21:05",
+      title: "Entrega de animales",
+      description: "Presentación de los nuevos animales.",
+      category: "presentation",
       presenters: [
         {
-          name: 'Agustin Kassis',
-          image: '/calendar/agustin.jpg',
-          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
+          name: "Agustin Kassis",
+          image: "/calendar/agustin.jpg",
+          socials: [{ type: "twitter", username: "agustin_kassis" }],
         },
       ],
     },
     {
-      time: '21:35',
-      title: 'Tarjeta La Crypta',
-      description: 'Presentación de la nueva tarjeta y sus beneficios',
-      category: 'presentation',
+      time: "21:20",
+      title: "Tarjeta La Crypta",
+      description: "Presentación de la nueva tarjeta y sus beneficios",
+      category: "presentation",
       presenters: [
         {
-          name: 'Agustin Kassis',
-          image: '/calendar/agustin.jpg',
-          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
+          name: "Agustin Kassis",
+          image: "/calendar/agustin.jpg",
+          socials: [{ type: "twitter", username: "agustin_kassis" }],
         },
       ],
     },
     {
-      time: '21:50',
-      title: 'Receso',
-      category: 'receso',
+      time: "21:30",
+      title: "Receso",
+      category: "receso",
     },
     {
-      time: '22:00',
-      title: 'Libro Criptoria',
-      description: '',
-      category: 'libro',
+      time: "21:40",
+      title: "Libro Criptoria",
+      description: "",
+      category: "libro",
       presenters: [
         {
-          name: 'Alfre Mancera',
-          image: '/calendar/alfre.jpg',
-          socials: [{ type: 'twitter', username: 'albibeno' }],
+          name: "Alfre Mancera",
+          image: "/calendar/alfre.jpg",
+          socials: [{ type: "twitter", username: "albibeno" }],
         },
       ],
     },
     {
-      time: '22:15',
-      title: 'Libro Profecía Bitcoin',
-      description: '',
-      category: 'libro',
+      time: "21:55",
+      title: "Libro Profecía Bitcoin",
+      description: "",
+      category: "libro",
       presenters: [
         {
-          name: 'Ariel Aguilar',
-          image: '/calendar/ariel.jpg',
-          socials: [{ type: 'twitter', username: 'arielaguilar' }],
+          name: "Ariel Aguilar",
+          image: "/calendar/ariel.jpg",
+          socials: [{ type: "twitter", username: "arielaguilar" }],
         },
       ],
     },
     {
-      time: '22:30',
-      title: 'Receso',
-      category: 'receso',
+      time: "22:10",
+      title: "Receso",
+      category: "receso",
     },
     {
-      time: '22:40',
-      title: 'LaWallet Nodes',
-      description: 'Presentación de la nueva propuesta de LaWallet.',
-      category: 'presentation',
+      time: "22:20",
+      title: "LaWallet Nodes",
+      description: "Presentación de la nueva propuesta de LaWallet.",
+      category: "presentation",
       presenters: [
         {
-          name: 'Agustin Kassis',
-          image: '/calendar/agustin.jpg',
-          socials: [{ type: 'twitter', username: 'agustin_kassis' }],
+          name: "Agustin Kassis",
+          image: "/calendar/agustin.jpg",
+          socials: [{ type: "twitter", username: "agustin_kassis" }],
         },
         {
-          name: 'Marce Cons',
-          image: '/calendar/marce.jpg',
-          socials: [{ type: 'twitter', username: 'marcela_cons' }],
-        },
-      ],
-    },
-    {
-      time: '23:10',
-      title: 'Show de tela',
-      description: '',
-      category: 'celebración',
-      presenters: [
-        {
-          name: 'Gabi',
-          image: '/calendar/gabi.jpg',
-          socials: [{ type: 'instagram', username: 'gabriela_battiato' }],
+          name: "Marce Cons",
+          image: "/calendar/marce.jpg",
+          socials: [{ type: "twitter", username: "marcela_cons" }],
         },
       ],
     },
@@ -148,11 +141,11 @@ export default function EventSchedule() {
 
   // Extraer categorías únicas para los botones de filtro
   const categories: { value: EventCategory; label: string }[] = [
-    { value: 'all', label: 'Todos' },
-    { value: 'presentation', label: 'Presentaciones' },
-    { value: 'libro', label: 'Libros' },
-    { value: 'receso', label: 'Recesos' },
-    { value: 'celebración', label: 'Celebración' },
+    { value: "all", label: "Todos" },
+    { value: "presentation", label: "Presentaciones" },
+    { value: "libro", label: "Libros" },
+    { value: "receso", label: "Recesos" },
+    { value: "celebración", label: "Celebración" },
   ];
 
   // Función para determinar si un evento debe ser resaltado
@@ -168,7 +161,9 @@ export default function EventSchedule() {
           <Button
             key={category.value}
             onClick={() => setSelectedCategory(category.value)}
-            variant={selectedCategory === category.value ? 'default' : 'secondary'}
+            variant={
+              selectedCategory === category.value ? "default" : "secondary"
+            }
           >
             {category.label}
           </Button>
@@ -192,7 +187,9 @@ export default function EventSchedule() {
             {/* Dot en la línea de tiempo */}
             <div
               className={`absolute left-2 w-3 h-3 ring-4 ring-black rounded-full transform mt-6 ${
-                shouldHighlight(event.category) ? 'bg-brand-green' : 'bg-zinc-600'
+                shouldHighlight(event.category)
+                  ? "bg-brand-green"
+                  : "bg-zinc-600"
               }`}
             ></div>
 
@@ -200,13 +197,17 @@ export default function EventSchedule() {
             <div
               className={`flex flex-col gap-2 ml-6 p-4 rounded-xl backdrop-blur-sm bg-zinc-900/30 
                 border ${
-                  shouldHighlight(event.category) ? 'border-brand-green/50' : 'border-zinc-800/50'
+                  shouldHighlight(event.category)
+                    ? "border-brand-green/50"
+                    : "border-zinc-800/50"
                 } transition-all duration-300 hover:border-zinc-700/70 group`}
             >
               <div className='flex justify-between items-start'>
                 <h3
                   className={`text-xl font-bold ${
-                    shouldHighlight(event.category) ? 'text-brand-green' : 'text-zinc-100'
+                    shouldHighlight(event.category)
+                      ? "text-brand-green"
+                      : "text-zinc-100"
                   }`}
                 >
                   {event.title}
