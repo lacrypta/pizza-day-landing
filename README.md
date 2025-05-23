@@ -1,1 +1,1 @@
-# bitcoin-pizza-day
+# pizza-day-landing

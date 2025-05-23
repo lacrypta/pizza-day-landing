@@ -6,17 +6,18 @@ import { motion } from 'framer-motion';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { BlockBar } from '@/components/ui/block-bar';
 
 interface TicketCardProps {
   url: string;
   title: string;
   price: number;
-  filled?: number;
+  totalTickets?: number;
   benefits: string[];
   isPremium?: boolean;
 }
 
-export default function TicketCard({ url, title, price, filled, benefits, isPremium = false }: TicketCardProps) {
+export default function TicketCard({ url, title, price, totalTickets, benefits, isPremium = false }: TicketCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -51,40 +52,12 @@ export default function TicketCard({ url, title, price, filled, benefits, isPrem
             <div>
               <p className='text-sm text-zinc-400'>Precio actual</p>
               <p className={`text-4xl font-bold ${isPremium ? 'text-brand-green' : 'text-foreground'}`}>
-                ${price} <span className='text-sm text-zinc-400'>USD</span>
+                ${price ? price : '-'} <span className='text-sm text-zinc-400'>USD</span>
               </p>
             </div>
 
             {/* Block Progress */}
-            {(filled || filled === 0) && (
-              <div className='flex flex-col gap-2'>
-                <div className='flex justify-between'>
-                  <div className='flex gap-1 text-sm'>
-                    <p className='text-zinc-400'>Progreso</p>
-                  </div>
-
-                  <div className='flex gap-1 text-sm justify-end'>
-                    <p className='text-zinc-400'>Bloque: </p>
-                    <p className='text-zinc-200 font-semibold'>{filled === 0 ? 'Génesis' : '#' + filled}</p>
-                  </div>
-                </div>
-                <div className='flex items-center gap-2'>
-                  {[0, 1, 2, 3, 4]?.map((value: any) => {
-                    return (
-                      <div key={value} className={`relative w-full ${value < filled ? 'opacity-80' : 'opacity-50'}`}>
-                        <div className={`h-2 w-full bg-zinc-800 rounded-full overflow-hidden relative`}>
-                          <motion.div
-                            className={`h-full ${
-                              isPremium ? (value < filled ? 'bg-brand-green' : 'bg-transparent') : 'bg-white'
-                            }`}
-                          ></motion.div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
+            {isPremium && <BlockBar totalTickets={totalTickets} />}
 
             {/* Benefits */}
             <div className='space-y-3'>

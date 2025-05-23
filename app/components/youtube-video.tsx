@@ -12,7 +12,7 @@ export default function YouTubeVideo({ videoId, title }: YouTubeVideoProps) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (
-    <div className="w-full aspect-video rounded-lg overflow-hidden bg-zinc-900 relative">
+    <div className="w-full aspect-video rounded-lg overflow-hidden relative">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 0 : 1 }}
